@@ -1,6 +1,6 @@
 ![Build and Deploy][badge]
-## NOMBRE DEL JUEGO
-# Londero Camila - Vargas Micaela - Martinez Azul
+# NOMBRE DEL JUEGO
+## Londero Camila - Vargas Micaela - Martinez Azul
 
 Descripción del proyecto:
 
