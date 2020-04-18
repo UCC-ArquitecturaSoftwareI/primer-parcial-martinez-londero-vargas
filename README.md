@@ -4,7 +4,7 @@
 
 Descripción del proyecto:
 Se trata de un juego de plataformas y disparos, donde el personaje principal debe escapar de la ciudad mientras un
-sin fin de enemigos intentan evitar que esto suceda.
+sinfín de enemigos intentan evitar que esto suceda.
 Se puede ver desde: [Github Pages][gh-pages]
 
 
