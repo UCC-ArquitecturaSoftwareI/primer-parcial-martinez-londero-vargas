@@ -1,6 +1,3 @@
-//
-// Created by micav on 17/04/2020.
-//
 
 #include <string>
 #include "Character.h"
