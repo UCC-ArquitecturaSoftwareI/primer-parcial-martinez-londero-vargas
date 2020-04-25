@@ -1,6 +1,7 @@
 #include <raylib.h>
 
-#include "clases/Character.cpp"
+#include "clases/Character.h"
+#include "clases/Map.h"
 
 #if defined(PLATFORM_WEB) // Para crear HTML5
 #include <emscripten/emscripten.h>
@@ -11,7 +12,7 @@ const int screenHeight = 450;
 // Variables Globales
 Music music;
  Character*player;
-Texture2D map;
+Map *map;
 Texture2D background;
 Texture2D midground;
 Texture2D foreground;
@@ -26,12 +27,11 @@ int main() {
     /// Ejemplo de utilización de audio.
     music = LoadMusicStream("resources/Cyberpunk Moonlight Sonata.mp3");
 
-    PlayMusicStream(music);
-    player = new Character("resources/SPRITES/player/run/run-1.png", Vector2{screenWidth / 2, screenHeight / 2});
+    //PlayMusicStream(music);
+    player = new Character("resources/run-shoot-6.png", Vector2{screenWidth / 2, screenHeight-50});
+    map= new Map("resources/tilesfinal.png");
 
-    map =LoadTexture("resources/near-buildings-bg.png");
-    float map_x=0;
-    float map_y=0;
+
     background=LoadTexture("resources/fondo.png");
     float background_x=0;
     float background_y=0;
@@ -72,11 +72,24 @@ static void UpdateDrawFrame(void) {
     UpdateMusicStream(music);
 
     // Verifico Entradas de eventos.
-    if (IsKeyDown(KEY_RIGHT)) player->move_x(2.0f);
-    if (IsKeyDown(KEY_LEFT)) player->move_x(-2.0f);
-    if (IsKeyDown(KEY_UP)) player->move_y(-2.0f);
-    if (IsKeyDown(KEY_DOWN)) player->move_y(2.0f);
+    if (IsKeyDown(KEY_RIGHT)) {
+        if (player->getCharacterPos().x>600)
+        map->setX(-3);
+      else player->move_x(2.0f);
+    }
+    if (IsKeyDown(KEY_LEFT)){
+        if (player->getCharacterPos().x<400)
+        map->setX(3);
+        else player->move_x(-2.0f);
+    }
+ /*   if (IsKeyDown(KEY_UP)){
+        player->move_y(-2.0f);
+    }
+    if (IsKeyDown(KEY_DOWN)) {
 
+        player->move_y(2.0f);
+    }
+*/
 
     // Comienzo a dibujar
     BeginDrawing();
@@ -87,10 +100,13 @@ static void UpdateDrawFrame(void) {
     ClearBackground(RAYWHITE); // Limpio la pantalla con blanco
     DrawTexture(midground,0,170,WHITE);
 
-    DrawTexture(map,0,240,WHITE);
+    map->dibujar();
+
     // Dibujo todos los elementos del juego.
+
     player->draw();
-    DrawText("Inicio", 20, 20, 40, LIGHTGRAY);
+
+    DrawText("Life:", 20, 20, 40, LIGHTGRAY);
 
 
     // Finalizo el dibujado
