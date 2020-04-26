@@ -8,6 +8,10 @@ class Character {
 protected:
     Texture2D character{};
     Vector2 character_pos;
+public:
+    const Vector2 &getCharacterPos() const;
+
+protected:
     int Life;
 
 public:

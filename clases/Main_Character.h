@@ -9,7 +9,7 @@ class Main_Character: public Character {
 protected:
 
 public:
-    Character(std::string text, const Vector2 &characterPos);
+//    Character(std::string text, const Vector2 &characterPos);
 
     void jump();
     void Crouch();

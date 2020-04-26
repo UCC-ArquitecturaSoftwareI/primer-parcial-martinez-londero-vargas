@@ -19,5 +19,14 @@ void Character::move_y(float d) {
     character_pos.y += d;
 }
 
+void Character::shoot() {
+
+
+}
+
+const Vector2 &Character::getCharacterPos() const {
+    return character_pos;
+}
+
 
 
