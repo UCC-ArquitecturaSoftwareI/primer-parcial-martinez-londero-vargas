@@ -29,7 +29,7 @@ int main() {
     music = LoadMusicStream("resources/Cyberpunk Moonlight Sonata.mp3");
 
     //PlayMusicStream(music);
-    player = new Character("resources/run-shoot-6.png", Vector2{screenWidth / 2, screenHeight-50});
+    player = new Character("resources/Run.png", Vector2{screenWidth / 2, screenHeight-80});
     map= new Map("resources/tilesfinal.png");
 
 

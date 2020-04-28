@@ -1,12 +1,14 @@
 
 #include <raylib.h>
 #include <string>
+#include "Animator.h"
+
 #ifndef RAYLIBTEMPLATE_CHARACTER_H
 #define RAYLIBTEMPLATE_CHARACTER_H
 
 class Character {
 protected:
-    Texture2D character{};
+    Animator *anim;
     Vector2 character_pos;
 public:
     const Vector2 &getCharacterPos() const;
