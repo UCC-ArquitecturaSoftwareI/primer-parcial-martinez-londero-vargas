@@ -1,7 +1,9 @@
 #include <raylib.h>
 
 #include "clases/Character.h"
+
 #include "clases/Map.h"
+
 
 #if defined(PLATFORM_WEB) // Para crear HTML5
 #include <emscripten/emscripten.h>
