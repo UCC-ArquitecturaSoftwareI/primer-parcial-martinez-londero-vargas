@@ -14,13 +14,13 @@ private:
     int cant;
     int img_act;
 
-    int alto, ancho;
+    float alto, ancho;
 
     int tiempo;
 public:
-    Animator(const std::string tex_file, int alto, int ancho, int cant);
+    Animator(const std::string tex_file, float alto, float ancho, int cant);
 
-    void draw(Vector2 character_pos);
+    void draw(Vector2 character_pos, int mirar);
 };
 
 

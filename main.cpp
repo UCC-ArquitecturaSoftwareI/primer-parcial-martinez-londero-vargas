@@ -12,7 +12,7 @@ const int screenHeight = 450;
 
 // Variables Globales
 Music music;
-Character*player;
+Character *player;
 Map *map;
 Texture2D background;
 Texture2D midground;
@@ -29,67 +29,67 @@ int main() {
     music = LoadMusicStream("resources/Cyberpunk Moonlight Sonata.mp3");
 
     //PlayMusicStream(music);
-    player = new Character("resources/Run.png", Vector2{screenWidth / 2, screenHeight-80});
-    map= new Map("resources/tilesfinal.png");
+    player = new Character("resources/Run.png", Vector2{screenWidth / 2, screenHeight - 80});
+    map = new Map("resources/tilesfinal.png");
 
 
-   background=LoadTexture("resources/fondo.png");
-    float background_x=0;
-    float background_y=0;
-    midground=LoadTexture("resources/pixel.png");
-    float midground_x=0;
-    float midground_y=0;
+    background = LoadTexture("resources/fondo.png");
+    float background_x = 0;
+    float background_y = 0;
+    midground = LoadTexture("resources/pixel.png");
+    float midground_x = 0;
+    float midground_y = 0;
 
-   /*PUEBA
-    Texture2D background = LoadTexture("resources/fondo.png");
-    Texture2D midground = LoadTexture("resources/pixel.png");
-    Texture2D foreground = LoadTexture("resources/tilesfinal.png");
+    /*PUEBA
+     Texture2D background = LoadTexture("resources/fondo.png");
+     Texture2D midground = LoadTexture("resources/pixel.png");
+     Texture2D foreground = LoadTexture("resources/tilesfinal.png");
 
-    float scrollingBack = 0.0f;
-    float scrollingMid = 0.0f;
-    float scrollingFore = 0.0f;
+     float scrollingBack = 0.0f;
+     float scrollingMid = 0.0f;
+     float scrollingFore = 0.0f;
 
-    SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
-    //--------------------------------------------------------------------------------------
+     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
+     //--------------------------------------------------------------------------------------
 
-    // Main game loop
-    while (!WindowShouldClose())    // Detect window close button or ESC key
-    {
-        // Update
-        //----------------------------------------------------------------------------------
-        scrollingBack -= 0.1f;
-        scrollingMid -= 0.5f;
-        scrollingFore -= 1.0f;
+     // Main game loop
+     while (!WindowShouldClose())    // Detect window close button or ESC key
+     {
+         // Update
+         //----------------------------------------------------------------------------------
+         scrollingBack -= 0.1f;
+         scrollingMid -= 0.5f;
+         scrollingFore -= 1.0f;
 
-        // NOTE: Texture is scaled twice its size, so it sould be considered on scrolling
-        if (scrollingBack <= -background.width*2) scrollingBack = 0;
-        if (scrollingMid <= -midground.width*2) scrollingMid = 0;
-        if (scrollingFore <= -foreground.width*2) scrollingFore = 0;
-        //----------------------------------------------------------------------------------
+         // NOTE: Texture is scaled twice its size, so it sould be considered on scrolling
+         if (scrollingBack <= -background.width*2) scrollingBack = 0;
+         if (scrollingMid <= -midground.width*2) scrollingMid = 0;
+         if (scrollingFore <= -foreground.width*2) scrollingFore = 0;
+         //----------------------------------------------------------------------------------
 
-        // Draw
-        //----------------------------------------------------------------------------------
-        BeginDrawing();
+         // Draw
+         //----------------------------------------------------------------------------------
+         BeginDrawing();
 
-        ClearBackground(GetColor(0x052c46ff));
+         ClearBackground(GetColor(0x052c46ff));
 
-        // Draw background image twice
-        // NOTE: Texture is scaled twice its size
-        DrawTextureEx(background, (Vector2){ scrollingBack, 20 }, 0.0f, 1.0f, WHITE);
-        DrawTextureEx(background, (Vector2){ background.width*2 + scrollingBack, 20 }, 0.0f, 1.0f, WHITE);
+         // Draw background image twice
+         // NOTE: Texture is scaled twice its size
+         DrawTextureEx(background, (Vector2){ scrollingBack, 20 }, 0.0f, 1.0f, WHITE);
+         DrawTextureEx(background, (Vector2){ background.width*2 + scrollingBack, 20 }, 0.0f, 1.0f, WHITE);
 
-        // Draw midground image twice
-        DrawTextureEx(midground, (Vector2){ scrollingMid, 0 }, 0.0f, 1.0f, WHITE);
-        DrawTextureEx(midground, (Vector2){ midground.width*2 + scrollingMid, 20 }, 0.0f, 1.0f, WHITE);
+         // Draw midground image twice
+         DrawTextureEx(midground, (Vector2){ scrollingMid, 0 }, 0.0f, 1.0f, WHITE);
+         DrawTextureEx(midground, (Vector2){ midground.width*2 + scrollingMid, 20 }, 0.0f, 1.0f, WHITE);
 
-        // Draw foreground image twice
-        DrawTextureEx(foreground, (Vector2){ scrollingFore, 0 }, 0.0f, 1.0f, WHITE);
-        DrawTextureEx(foreground, (Vector2){ foreground.width*2 + scrollingFore, 70 }, 0.0f, 1.0f, WHITE);
+         // Draw foreground image twice
+         DrawTextureEx(foreground, (Vector2){ scrollingFore, 0 }, 0.0f, 1.0f, WHITE);
+         DrawTextureEx(foreground, (Vector2){ foreground.width*2 + scrollingFore, 70 }, 0.0f, 1.0f, WHITE);
 
 
-        EndDrawing();
-        //----------------------------------------------------------------------------------
-    }*/
+         EndDrawing();
+         //----------------------------------------------------------------------------------
+     }*/
 
 
 
@@ -127,33 +127,36 @@ static void UpdateDrawFrame(void) {
     UpdateMusicStream(music);
 
     // Verifico Entradas de eventos.
-   if (IsKeyDown(KEY_RIGHT)) {
-        if (player->getCharacterPos().x>600)
+    if (IsKeyDown(KEY_RIGHT)) {
+        if (player->getCharacterPos().x > 600)
             map->setX(-3);
         else player->move_x(2.0f);
     }
-    if (IsKeyDown(KEY_LEFT)){
-        if (player->getCharacterPos().x<400)
+    if (IsKeyDown(KEY_LEFT)) {
+        if (player->getCharacterPos().x < 400)
             map->setX(3);
         else player->move_x(-2.0f);
     }
-    /*   if (IsKeyDown(KEY_UP)){
-           player->move_y(-2.0f);
-       }
-       if (IsKeyDown(KEY_DOWN)) {
-           player->move_y(2.0f);
-       }
-   */
+    if (IsKeyDown(KEY_UP)) {
+        player->move_y(-2.0f);
+    }
+    if (IsKeyDown(KEY_DOWN)) {
+        player->move_y(2.0f);
+    }
+    if (IsKeyDown(KEY_SPACE)) {
+        player->shoot();
+    }
+
 
 
     // Comienzo a dibujar
     BeginDrawing();
 
     ClearBackground(RAYWHITE); // Limpio la pantalla con blanco
-    DrawTexture(background,0,0,WHITE);
+    DrawTexture(background, 0, 0, WHITE);
 
     ClearBackground(RAYWHITE); // Limpio la pantalla con blanco
-    DrawTexture(midground,0,170,WHITE);
+    DrawTexture(midground, 0, 170, WHITE);
 
     map->dibujar();
 

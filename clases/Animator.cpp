@@ -3,17 +3,25 @@
 //
 
 #include <string>
+#include <iostream>
 #include "Animator.h"
 
-Animator::Animator(const std::string tex_file, int alto, int ancho, int cant) : textura(textura), alto(alto),
-                                                                                ancho(ancho), cant(cant) {
+Animator::Animator(const std::string tex_file, float alto, float ancho, int cant) : textura(textura), alto(alto),
+                                                                                    ancho(ancho), cant(cant) {
     textura = LoadTexture(tex_file.c_str());
+    tiempo = 4;
 }
 
-void Animator::draw(Vector2 character_pos) {
-    Rectangle rec = {0, img_act* ancho, 570.0, 57.0};
+void Animator::draw(Vector2 character_pos, int mirar) {
+    Rectangle rec = {(float) img_act * ancho, 0, ancho, alto};
 
-    DrawTextureRec(textura,rec, character_pos, WHITE);
-    //
-    //DrawTexture(textura, character_pos.x - textura.width/2, character_pos.y- textura.height/2, WHITE);
+    DrawTextureRec(textura, rec, character_pos, WHITE);
+
+    if (tiempo-- <= 0) {
+        tiempo = 4;
+        img_act++;
+        if (img_act >= cant) {
+            img_act = 0;
+        }
+    }
 }
