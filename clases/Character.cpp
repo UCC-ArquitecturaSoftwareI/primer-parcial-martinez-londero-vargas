@@ -13,13 +13,13 @@ Character::Character(std::string text, const Vector2 &characterPos) : character_
 void Character::draw() {
     switch (estado) {
         case CORRIENDO:
-            anim[0]->draw(character_pos);
+            anim[0]->draw(character_pos, mirar);
             break;
         case DISPARANDO:
-            anim[1]->draw(character_pos);
+            anim[1]->draw(character_pos, mirar);
             break;
         case QUIETO:
-            anim[2]->draw(character_pos);
+            anim[2]->draw(character_pos, mirar);
             break;
 
     }
