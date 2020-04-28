@@ -10,6 +10,9 @@ class Character {
     Texture2D character{};
     Vector2 character_pos;
 public:
+    const Vector2 &getCharacterPos() const;
+
+public:
     Character(std::string text, const Vector2 &characterPos);
 
     void draw();
