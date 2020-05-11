@@ -7,13 +7,17 @@
 
 #include "raylib.h"
 #include <string>
+#include "../libreria/tileson.hpp"
 class Map
 {
+    tson::Map map;
     Texture2D dibujo;
     int x=0;
     int y=0;
+    tson::Tileset *map_tileset;
 public:
-    Map (std::string img);
+    Vector2 player_init_pos;
+    Map(std::string file);
     void setX(int x);
     int getX();
     void setY(int y);
