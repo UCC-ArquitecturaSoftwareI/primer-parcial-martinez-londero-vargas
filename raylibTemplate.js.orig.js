@@ -194,7 +194,7 @@ Module['FS_createPath']('/', 'resources', true, true);
   }
 
  }
- loadPackage({"files": [{"start": 0, "audio": 0, "end": 28418, "filename": "/resources/tilesfinal.png"}, {"start": 28418, "audio": 1, "end": 2367338, "filename": "/resources/Cyberpunk Moonlight Sonata.mp3"}, {"start": 2367338, "audio": 0, "end": 2370152, "filename": "/resources/tilesfinal.tmx"}, {"start": 2370152, "audio": 0, "end": 2371900, "filename": "/resources/run-shoot-6.png"}, {"start": 2371900, "audio": 0, "end": 2382593, "filename": "/resources/shell.html"}, {"start": 2382593, "audio": 0, "end": 2384550, "filename": "/resources/ship.png"}, {"start": 2384550, "audio": 0, "end": 2406185, "filename": "/resources/near-buildings-bg.png"}, {"start": 2406185, "audio": 0, "end": 2426220, "filename": "/resources/fondo.png"}, {"start": 2426220, "audio": 0, "end": 2446332, "filename": "/resources/pixel.png"}], "remote_package_size": 2446332, "package_uuid": "a838c7d6-1f7a-41dd-a4ba-9307c4ec090c"});
+ loadPackage({"files": [{"start": 0, "audio": 0, "end": 20112, "filename": "/resources/pixel.png"}, {"start": 20112, "audio": 0, "end": 22926, "filename": "/resources/tilesfinal.tmx"}, {"start": 22926, "audio": 0, "end": 30878, "filename": "/resources/shoot2.png"}, {"start": 30878, "audio": 0, "end": 32626, "filename": "/resources/run-shoot-6.png"}, {"start": 32626, "audio": 1, "end": 2371546, "filename": "/resources/Cyberpunk Moonlight Sonata.mp3"}, {"start": 2371546, "audio": 0, "end": 2382239, "filename": "/resources/shell.html"}, {"start": 2382239, "audio": 0, "end": 2410657, "filename": "/resources/tilesfinal.png"}, {"start": 2410657, "audio": 0, "end": 2418332, "filename": "/resources/jump.png"}, {"start": 2418332, "audio": 0, "end": 2439967, "filename": "/resources/near-buildings-bg.png"}, {"start": 2439967, "audio": 0, "end": 2460002, "filename": "/resources/fondo.png"}, {"start": 2460002, "audio": 0, "end": 2461959, "filename": "/resources/ship.png"}], "remote_package_size": 2461959, "package_uuid": "90e86256-7f39-44cf-ac0b-240e5f58d698"});
 
 })();
 
@@ -25247,572 +25247,572 @@ function ___intscan($f, $base, $pok, $0, $1) {
 function _emscripten_webgl1_get_proc_address($name) {
  $name = $name | 0;
  var $retval$0 = 0, $tobool638 = 0;
- do if (!(_strcmp($name, 45506) | 0)) $retval$0 = 7; else if (!(_strcmp($name, 45522) | 0)) $retval$0 = 8; else if (!(_strcmp($name, 45537) | 0)) $retval$0 = 3; else if (!(_strcmp($name, 45558) | 0)) $retval$0 = 9; else if (!(_strcmp($name, 45571) | 0)) $retval$0 = 10; else if (!(_strcmp($name, 45589) | 0)) $retval$0 = 11; else if (!(_strcmp($name, 45608) | 0)) $retval$0 = 12; else if (!(_strcmp($name, 45622) | 0)) $retval$0 = 1; else if (!(_strcmp($name, 45635) | 0)) $retval$0 = 8; else if (!(_strcmp($name, 45651) | 0)) $retval$0 = 13; else if (!(_strcmp($name, 45675) | 0)) $retval$0 = 14; else if (!(_strcmp($name, 45687) | 0)) $retval$0 = 6; else if (!(_strcmp($name, 45707) | 0)) $retval$0 = 7; else if (!(_strcmp($name, 45720) | 0)) $retval$0 = 8; else if (!(_strcmp($name, 45736) | 0)) $retval$0 = 15; else if (!(_strcmp($name, 45761) | 0)) $retval$0 = 9; else if (!(_strcmp($name, 45769) | 0)) $retval$0 = 2; else if (!(_strcmp($name, 45782) | 0)) $retval$0 = 1; else if (!(_strcmp($name, 45796) | 0)) $retval$0 = 10; else {
-  if (!(_strcmp($name, 45811) | 0)) {
-   $retval$0 = 9;
+ do if (!(_strcmp($name, 45482) | 0)) $retval$0 = 9; else if (!(_strcmp($name, 45498) | 0)) $retval$0 = 15; else if (!(_strcmp($name, 45513) | 0)) $retval$0 = 8; else if (!(_strcmp($name, 45534) | 0)) $retval$0 = 16; else if (!(_strcmp($name, 45547) | 0)) $retval$0 = 17; else if (!(_strcmp($name, 45565) | 0)) $retval$0 = 18; else if (!(_strcmp($name, 45584) | 0)) $retval$0 = 19; else if (!(_strcmp($name, 45598) | 0)) $retval$0 = 1; else if (!(_strcmp($name, 45611) | 0)) $retval$0 = 10; else if (!(_strcmp($name, 45627) | 0)) $retval$0 = 20; else if (!(_strcmp($name, 45651) | 0)) $retval$0 = 21; else if (!(_strcmp($name, 45663) | 0)) $retval$0 = 7; else if (!(_strcmp($name, 45683) | 0)) $retval$0 = 8; else if (!(_strcmp($name, 45696) | 0)) $retval$0 = 9; else if (!(_strcmp($name, 45712) | 0)) $retval$0 = 17; else if (!(_strcmp($name, 45737) | 0)) $retval$0 = 11; else if (!(_strcmp($name, 45745) | 0)) $retval$0 = 2; else if (!(_strcmp($name, 45758) | 0)) $retval$0 = 1; else if (!(_strcmp($name, 45772) | 0)) $retval$0 = 12; else {
+  if (!(_strcmp($name, 45787) | 0)) {
+   $retval$0 = 10;
    break;
   }
-  if (!(_strcmp($name, 45823) | 0)) {
-   $retval$0 = 11;
-   break;
-  }
-  if (!(_strcmp($name, 45839) | 0)) {
-   $retval$0 = 1;
-   break;
-  }
-  if (!(_strcmp($name, 45862) | 0)) {
-   $retval$0 = 1;
-   break;
-  }
-  if (!(_strcmp($name, 45888) | 0)) {
-   $retval$0 = 2;
-   break;
-  }
-  if (!(_strcmp($name, 45905) | 0)) {
-   $retval$0 = 3;
-   break;
-  }
-  if (!(_strcmp($name, 45925) | 0)) {
-   $retval$0 = 1;
-   break;
-  }
-  if (!(_strcmp($name, 45941) | 0)) {
-   $retval$0 = 16;
-   break;
-  }
-  if (!(_strcmp($name, 45956) | 0)) {
-   $retval$0 = 12;
-   break;
-  }
-  if (!(_strcmp($name, 45967) | 0)) {
-   $retval$0 = 15;
-   break;
-  }
-  if (!(_strcmp($name, 45983) | 0)) {
-   $retval$0 = 16;
-   break;
-  }
-  if (!(_strcmp($name, 46004) | 0)) {
+  if (!(_strcmp($name, 45799) | 0)) {
    $retval$0 = 13;
    break;
   }
-  if (!(_strcmp($name, 46020) | 0)) {
-   $retval$0 = 17;
+  if (!(_strcmp($name, 45815) | 0)) {
+   $retval$0 = 1;
    break;
   }
-  if (!(_strcmp($name, 46042) | 0)) {
+  if (!(_strcmp($name, 45838) | 0)) {
+   $retval$0 = 1;
+   break;
+  }
+  if (!(_strcmp($name, 45864) | 0)) {
+   $retval$0 = 2;
+   break;
+  }
+  if (!(_strcmp($name, 45881) | 0)) {
+   $retval$0 = 3;
+   break;
+  }
+  if (!(_strcmp($name, 45901) | 0)) {
+   $retval$0 = 1;
+   break;
+  }
+  if (!(_strcmp($name, 45917) | 0)) {
+   $retval$0 = 18;
+   break;
+  }
+  if (!(_strcmp($name, 45932) | 0)) {
    $retval$0 = 14;
    break;
   }
-  if (!(_strcmp($name, 46057) | 0)) {
+  if (!(_strcmp($name, 45943) | 0)) {
+   $retval$0 = 22;
+   break;
+  }
+  if (!(_strcmp($name, 45959) | 0)) {
+   $retval$0 = 23;
+   break;
+  }
+  if (!(_strcmp($name, 45980) | 0)) {
+   $retval$0 = 15;
+   break;
+  }
+  if (!(_strcmp($name, 45996) | 0)) {
+   $retval$0 = 24;
+   break;
+  }
+  if (!(_strcmp($name, 46018) | 0)) {
+   $retval$0 = 16;
+   break;
+  }
+  if (!(_strcmp($name, 46033) | 0)) {
+   $retval$0 = 25;
+   break;
+  }
+  if (!(_strcmp($name, 46050) | 0)) {
+   $retval$0 = 17;
+   break;
+  }
+  if (!(_strcmp($name, 46062) | 0)) {
    $retval$0 = 18;
    break;
   }
   if (!(_strcmp($name, 46074) | 0)) {
-   $retval$0 = 15;
-   break;
-  }
-  if (!(_strcmp($name, 46086) | 0)) {
-   $retval$0 = 16;
-   break;
-  }
-  if (!(_strcmp($name, 46098) | 0)) {
    $retval$0 = 1;
    break;
   }
-  if (!(_strcmp($name, 46112) | 0)) {
-   $retval$0 = 19;
-   break;
-  }
-  if (!(_strcmp($name, 46127) | 0)) {
-   $retval$0 = 17;
-   break;
-  }
-  if (!(_strcmp($name, 46137) | 0)) {
-   $retval$0 = 18;
-   break;
-  }
-  if (!(_strcmp($name, 46164) | 0)) {
-   $retval$0 = 4;
-   break;
-  }
-  if (!(_strcmp($name, 46177) | 0)) {
-   $retval$0 = 10;
-   break;
-  }
-  if (!(_strcmp($name, 46192) | 0)) {
-   $retval$0 = 19;
-   break;
-  }
-  if (!(_strcmp($name, 46201) | 0)) {
-   $retval$0 = 20;
-   break;
-  }
-  if (!(_strcmp($name, 46227) | 0)) {
-   $retval$0 = 2;
-   break;
-  }
-  if (!(_strcmp($name, 46236) | 0)) {
-   $retval$0 = 3;
-   break;
-  }
-  if (!(_strcmp($name, 46244) | 0)) {
-   $retval$0 = 11;
-   break;
-  }
-  if (!(_strcmp($name, 46270) | 0)) {
-   $retval$0 = 39;
-   break;
-  }
-  if (!(_strcmp($name, 46293) | 0)) {
-   $retval$0 = 21;
-   break;
-  }
-  if (!(_strcmp($name, 46305) | 0)) {
-   $retval$0 = 20;
-   break;
-  }
-  if (!(_strcmp($name, 46318) | 0)) {
-   $retval$0 = 22;
-   break;
-  }
-  if (!(_strcmp($name, 46335) | 0)) {
-   $retval$0 = 21;
-   break;
-  }
-  if (!(_strcmp($name, 46353) | 0)) {
-   $retval$0 = 22;
-   break;
-  }
-  if (!(_strcmp($name, 46372) | 0)) {
-   $retval$0 = 23;
-   break;
-  }
-  if (!(_strcmp($name, 46386) | 0)) {
-   $retval$0 = 1;
-   break;
-  }
-  if (!(_strcmp($name, 46404) | 0)) {
-   $retval$0 = 2;
-   break;
-  }
-  if (!(_strcmp($name, 46423) | 0)) {
-   $retval$0 = 12;
-   break;
-  }
-  if (!(_strcmp($name, 46444) | 0)) {
-   $retval$0 = 7;
-   break;
-  }
-  if (!(_strcmp($name, 46464) | 0)) {
-   $retval$0 = 24;
-   break;
-  }
-  if (!(_strcmp($name, 46478) | 0)) {
-   $retval$0 = 5;
-   break;
-  }
-  if (!(_strcmp($name, 46501) | 0)) {
-   $retval$0 = 2;
-   break;
-  }
-  if (!(_strcmp($name, 46512) | 0)) {
-   $retval$0 = 25;
-   break;
-  }
-  if (!(_strcmp($name, 46524) | 0)) {
-   $retval$0 = 13;
-   break;
-  }
-  if (!(_strcmp($name, 46562) | 0)) {
+  if (!(_strcmp($name, 46088) | 0)) {
    $retval$0 = 26;
    break;
   }
-  if (!(_strcmp($name, 46576) | 0)) {
-   $retval$0 = 6;
+  if (!(_strcmp($name, 46103) | 0)) {
+   $retval$0 = 19;
    break;
   }
-  if (!(_strcmp($name, 46591) | 0)) {
-   $retval$0 = 14;
+  if (!(_strcmp($name, 46113) | 0)) {
+   $retval$0 = 20;
    break;
   }
-  if (!(_strcmp($name, 46611) | 0)) {
-   $retval$0 = 7;
-   break;
-  }
-  if (!(_strcmp($name, 46640) | 0)) {
-   $retval$0 = 8;
-   break;
-  }
-  if (!(_strcmp($name, 46654) | 0)) {
-   $retval$0 = 15;
-   break;
-  }
-  if (!(_strcmp($name, 46673) | 0)) {
-   $retval$0 = 16;
-   break;
-  }
-  if (!(_strcmp($name, 46700) | 0)) {
-   $retval$0 = 17;
-   break;
-  }
-  if (!(_strcmp($name, 46718) | 0)) {
-   $retval$0 = 17;
-   break;
-  }
-  if (!(_strcmp($name, 46730) | 0)) {
+  if (!(_strcmp($name, 46140) | 0)) {
    $retval$0 = 9;
    break;
   }
-  if (!(_strcmp($name, 46750) | 0)) {
-   $retval$0 = 10;
-   break;
-  }
-  if (!(_strcmp($name, 46770) | 0)) {
+  if (!(_strcmp($name, 46153) | 0)) {
    $retval$0 = 11;
    break;
   }
-  if (!(_strcmp($name, 46785) | 0)) {
+  if (!(_strcmp($name, 46168) | 0)) {
+   $retval$0 = 21;
+   break;
+  }
+  if (!(_strcmp($name, 46177) | 0)) {
+   $retval$0 = 22;
+   break;
+  }
+  if (!(_strcmp($name, 46203) | 0)) {
+   $retval$0 = 2;
+   break;
+  }
+  if (!(_strcmp($name, 46212) | 0)) {
+   $retval$0 = 3;
+   break;
+  }
+  if (!(_strcmp($name, 46220) | 0)) {
    $retval$0 = 12;
    break;
   }
-  if (!(_strcmp($name, 46800) | 0)) {
-   $retval$0 = 8;
+  if (!(_strcmp($name, 46246) | 0)) {
+   $retval$0 = 40;
    break;
   }
-  if (!(_strcmp($name, 46821) | 0)) {
+  if (!(_strcmp($name, 46269) | 0)) {
+   $retval$0 = 23;
+   break;
+  }
+  if (!(_strcmp($name, 46281) | 0)) {
+   $retval$0 = 27;
+   break;
+  }
+  if (!(_strcmp($name, 46294) | 0)) {
+   $retval$0 = 24;
+   break;
+  }
+  if (!(_strcmp($name, 46311) | 0)) {
+   $retval$0 = 28;
+   break;
+  }
+  if (!(_strcmp($name, 46329) | 0)) {
+   $retval$0 = 29;
+   break;
+  }
+  if (!(_strcmp($name, 46348) | 0)) {
+   $retval$0 = 30;
+   break;
+  }
+  if (!(_strcmp($name, 46362) | 0)) {
+   $retval$0 = 1;
+   break;
+  }
+  if (!(_strcmp($name, 46380) | 0)) {
+   $retval$0 = 2;
+   break;
+  }
+  if (!(_strcmp($name, 46399) | 0)) {
    $retval$0 = 13;
    break;
   }
-  if (!(_strcmp($name, 46841) | 0)) {
+  if (!(_strcmp($name, 46420) | 0)) {
+   $retval$0 = 7;
+   break;
+  }
+  if (!(_strcmp($name, 46440) | 0)) {
+   $retval$0 = 31;
+   break;
+  }
+  if (!(_strcmp($name, 46454) | 0)) {
+   $retval$0 = 10;
+   break;
+  }
+  if (!(_strcmp($name, 46477) | 0)) {
+   $retval$0 = 2;
+   break;
+  }
+  if (!(_strcmp($name, 46488) | 0)) {
+   $retval$0 = 32;
+   break;
+  }
+  if (!(_strcmp($name, 46500) | 0)) {
    $retval$0 = 14;
    break;
   }
-  if (!(_strcmp($name, 46861) | 0)) {
+  if (!(_strcmp($name, 46538) | 0)) {
+   $retval$0 = 33;
+   break;
+  }
+  if (!(_strcmp($name, 46552) | 0)) {
+   $retval$0 = 11;
+   break;
+  }
+  if (!(_strcmp($name, 46567) | 0)) {
    $retval$0 = 15;
    break;
   }
-  if (!(_strcmp($name, 46887) | 0)) {
-   $retval$0 = 27;
+  if (!(_strcmp($name, 46587) | 0)) {
+   $retval$0 = 12;
    break;
   }
-  if (!(_strcmp($name, 46894) | 0)) {
-   $retval$0 = 18;
+  if (!(_strcmp($name, 46616) | 0)) {
+   $retval$0 = 13;
    break;
   }
-  if (!(_strcmp($name, 46905) | 0)) {
-   $retval$0 = 19;
-   break;
-  }
-  if (!(_strcmp($name, 46917) | 0)) {
-   $retval$0 = 20;
-   break;
-  }
-  if (!(_strcmp($name, 46933) | 0)) {
-   $retval$0 = 21;
-   break;
-  }
-  if (!(_strcmp($name, 46945) | 0)) {
-   $retval$0 = 22;
-   break;
-  }
-  if (!(_strcmp($name, 46962) | 0)) {
-   $retval$0 = 23;
-   break;
-  }
-  if (!(_strcmp($name, 46973) | 0)) {
-   $retval$0 = 24;
-   break;
-  }
-  if (!(_strcmp($name, 46985) | 0)) {
-   $retval$0 = 2;
-   break;
-  }
-  if (!(_strcmp($name, 46997) | 0)) {
-   $retval$0 = 23;
-   break;
-  }
-  if (!(_strcmp($name, 47011) | 0)) {
-   $retval$0 = 28;
-   break;
-  }
-  if (!(_strcmp($name, 47025) | 0)) {
-   $retval$0 = 2;
-   break;
-  }
-  if (!(_strcmp($name, 47041) | 0)) {
-   $retval$0 = 3;
-   break;
-  }
-  if (!(_strcmp($name, 47054) | 0)) {
-   $retval$0 = 4;
-   break;
-  }
-  if (!(_strcmp($name, 47078) | 0)) {
-   $retval$0 = 18;
-   break;
-  }
-  if (!(_strcmp($name, 47100) | 0)) {
-   $retval$0 = 1;
-   break;
-  }
-  if (!(_strcmp($name, 47117) | 0)) {
-   $retval$0 = 19;
-   break;
-  }
-  if (!(_strcmp($name, 47127) | 0)) {
-   $retval$0 = 40;
-   break;
-  }
-  if (!(_strcmp($name, 47142) | 0)) {
-   $retval$0 = 20;
-   break;
-  }
-  if (!(_strcmp($name, 47157) | 0)) {
+  if (!(_strcmp($name, 46630) | 0)) {
    $retval$0 = 16;
    break;
   }
-  if (!(_strcmp($name, 47171) | 0)) {
-   $retval$0 = 21;
-   break;
-  }
-  if (!(_strcmp($name, 47193) | 0)) {
-   $retval$0 = 24;
-   break;
-  }
-  if (!(_strcmp($name, 47207) | 0)) {
-   $retval$0 = 29;
-   break;
-  }
-  if (!(_strcmp($name, 47229) | 0)) {
+  if (!(_strcmp($name, 46649) | 0)) {
    $retval$0 = 17;
    break;
   }
-  if (!(_strcmp($name, 47241) | 0)) {
-   $retval$0 = 22;
-   break;
-  }
-  if (!(_strcmp($name, 47261) | 0)) {
-   $retval$0 = 2;
-   break;
-  }
-  if (!(_strcmp($name, 47274) | 0)) {
-   $retval$0 = 1;
-   break;
-  }
-  if (!(_strcmp($name, 47290) | 0)) {
+  if (!(_strcmp($name, 46676) | 0)) {
    $retval$0 = 18;
    break;
   }
-  if (!(_strcmp($name, 47307) | 0)) {
+  if (!(_strcmp($name, 46694) | 0)) {
    $retval$0 = 19;
    break;
   }
-  if (!(_strcmp($name, 47323) | 0)) {
+  if (!(_strcmp($name, 46706) | 0)) {
+   $retval$0 = 14;
+   break;
+  }
+  if (!(_strcmp($name, 46726) | 0)) {
+   $retval$0 = 15;
+   break;
+  }
+  if (!(_strcmp($name, 46746) | 0)) {
+   $retval$0 = 16;
+   break;
+  }
+  if (!(_strcmp($name, 46761) | 0)) {
+   $retval$0 = 17;
+   break;
+  }
+  if (!(_strcmp($name, 46776) | 0)) {
+   $retval$0 = 8;
+   break;
+  }
+  if (!(_strcmp($name, 46797) | 0)) {
+   $retval$0 = 18;
+   break;
+  }
+  if (!(_strcmp($name, 46817) | 0)) {
+   $retval$0 = 19;
+   break;
+  }
+  if (!(_strcmp($name, 46837) | 0)) {
    $retval$0 = 20;
    break;
   }
-  if (!(_strcmp($name, 47340) | 0)) {
-   $retval$0 = 3;
+  if (!(_strcmp($name, 46863) | 0)) {
+   $retval$0 = 34;
    break;
   }
-  if (!(_strcmp($name, 47356) | 0)) {
-   $retval$0 = 1;
+  if (!(_strcmp($name, 46870) | 0)) {
+   $retval$0 = 20;
    break;
   }
-  if (!(_strcmp($name, 47368) | 0)) {
+  if (!(_strcmp($name, 46881) | 0)) {
    $retval$0 = 21;
    break;
   }
-  if (!(_strcmp($name, 47381) | 0)) {
-   $retval$0 = 30;
-   break;
-  }
-  if (!(_strcmp($name, 47393) | 0)) {
+  if (!(_strcmp($name, 46893) | 0)) {
    $retval$0 = 22;
    break;
   }
-  if (!(_strcmp($name, 47406) | 0)) {
-   $retval$0 = 1;
-   break;
-  }
-  if (!(_strcmp($name, 47418) | 0)) {
+  if (!(_strcmp($name, 46909) | 0)) {
    $retval$0 = 23;
    break;
   }
-  if (!(_strcmp($name, 47431) | 0)) {
+  if (!(_strcmp($name, 46921) | 0)) {
    $retval$0 = 24;
    break;
   }
-  if (!(_strcmp($name, 47443) | 0)) {
+  if (!(_strcmp($name, 46938) | 0)) {
    $retval$0 = 25;
    break;
   }
-  if (!(_strcmp($name, 47456) | 0)) {
-   $retval$0 = 1;
-   break;
-  }
-  if (!(_strcmp($name, 47468) | 0)) {
+  if (!(_strcmp($name, 46949) | 0)) {
    $retval$0 = 26;
    break;
   }
-  if (!(_strcmp($name, 47481) | 0)) {
-   $retval$0 = 23;
+  if (!(_strcmp($name, 46961) | 0)) {
+   $retval$0 = 2;
    break;
   }
-  if (!(_strcmp($name, 47493) | 0)) {
-   $retval$0 = 27;
-   break;
-  }
-  if (!(_strcmp($name, 47506) | 0)) {
-   $retval$0 = 1;
-   break;
-  }
-  if (!(_strcmp($name, 47518) | 0)) {
-   $retval$0 = 28;
-   break;
-  }
-  if (!(_strcmp($name, 47531) | 0)) {
-   $retval$0 = 41;
-   break;
-  }
-  if (!(_strcmp($name, 47543) | 0)) {
-   $retval$0 = 29;
-   break;
-  }
-  if (!(_strcmp($name, 47556) | 0)) {
-   $retval$0 = 24;
-   break;
-  }
-  if (!(_strcmp($name, 47575) | 0)) {
+  if (!(_strcmp($name, 46973) | 0)) {
    $retval$0 = 25;
    break;
   }
-  if (!(_strcmp($name, 47594) | 0)) {
-   $retval$0 = 26;
-   break;
-  }
-  if (!(_strcmp($name, 47613) | 0)) {
-   $retval$0 = 25;
-   break;
-  }
-  if (!(_strcmp($name, 47626) | 0)) {
-   $retval$0 = 26;
-   break;
-  }
-  if (!(_strcmp($name, 47644) | 0)) {
-   $retval$0 = 2;
-   break;
-  }
-  if (!(_strcmp($name, 47661) | 0)) {
-   $retval$0 = 31;
-   break;
-  }
-  if (!(_strcmp($name, 47679) | 0)) {
-   $retval$0 = 2;
-   break;
-  }
-  if (!(_strcmp($name, 47696) | 0)) {
-   $retval$0 = 32;
-   break;
-  }
-  if (!(_strcmp($name, 47714) | 0)) {
-   $retval$0 = 2;
-   break;
-  }
-  if (!(_strcmp($name, 47731) | 0)) {
-   $retval$0 = 33;
-   break;
-  }
-  if (!(_strcmp($name, 47749) | 0)) {
-   $retval$0 = 2;
-   break;
-  }
-  if (!(_strcmp($name, 47766) | 0)) {
-   $retval$0 = 34;
-   break;
-  }
-  if (!(_strcmp($name, 47784) | 0)) {
-   $retval$0 = 3;
-   break;
-  }
-  if (!(_strcmp($name, 47806) | 0)) {
-   $retval$0 = 27;
-   break;
-  }
-  if (!(_strcmp($name, 47817) | 0)) {
+  if (!(_strcmp($name, 46987) | 0)) {
    $retval$0 = 35;
    break;
   }
-  if (!(_strcmp($name, 47833) | 0)) {
-   $retval$0 = 36;
+  if (!(_strcmp($name, 47001) | 0)) {
+   $retval$0 = 2;
    break;
   }
-  if (!(_strcmp($name, 47852) | 0)) {
-   $retval$0 = 25;
+  if (!(_strcmp($name, 47017) | 0)) {
+   $retval$0 = 3;
    break;
   }
-  if (!(_strcmp($name, 47865) | 0)) {
-   $retval$0 = 37;
+  if (!(_strcmp($name, 47030) | 0)) {
+   $retval$0 = 4;
    break;
   }
-  if (!(_strcmp($name, 47881) | 0)) {
-   $retval$0 = 27;
+  if (!(_strcmp($name, 47054) | 0)) {
+   $retval$0 = 19;
    break;
   }
-  if (!(_strcmp($name, 47895) | 0)) {
-   $retval$0 = 38;
+  if (!(_strcmp($name, 47076) | 0)) {
+   $retval$0 = 1;
    break;
   }
-  if (!(_strcmp($name, 47913) | 0)) {
-   $retval$0 = 30;
+  if (!(_strcmp($name, 47093) | 0)) {
+   $retval$0 = 20;
    break;
   }
-  if (!(_strcmp($name, 47929) | 0)) {
-   $retval$0 = 31;
-   break;
-  }
-  if (!(_strcmp($name, 47951) | 0)) {
-   $retval$0 = 32;
-   break;
-  }
-  if (!(_strcmp($name, 47974) | 0)) {
-   $retval$0 = 33;
-   break;
-  }
-  if (!(_strcmp($name, 47998) | 0)) {
-   $retval$0 = 34;
-   break;
-  }
-  if (!(_strcmp($name, 48023) | 0)) {
-   $retval$0 = 28;
-   break;
-  }
-  if (!(_strcmp($name, 48044) | 0)) {
-   $retval$0 = 39;
-   break;
-  }
-  if (!(_strcmp($name, 48068) | 0)) {
-   $retval$0 = 40;
-   break;
-  }
-  if (!(_strcmp($name, 48089) | 0)) {
-   $retval$0 = 26;
-   break;
-  }
-  if (!(_strcmp($name, 48108) | 0)) {
+  if (!(_strcmp($name, 47103) | 0)) {
    $retval$0 = 41;
    break;
   }
-  if (!(_strcmp($name, 48127) | 0)) {
+  if (!(_strcmp($name, 47118) | 0)) {
+   $retval$0 = 21;
+   break;
+  }
+  if (!(_strcmp($name, 47133) | 0)) {
+   $retval$0 = 21;
+   break;
+  }
+  if (!(_strcmp($name, 47147) | 0)) {
+   $retval$0 = 22;
+   break;
+  }
+  if (!(_strcmp($name, 47169) | 0)) {
+   $retval$0 = 26;
+   break;
+  }
+  if (!(_strcmp($name, 47183) | 0)) {
+   $retval$0 = 36;
+   break;
+  }
+  if (!(_strcmp($name, 47205) | 0)) {
+   $retval$0 = 22;
+   break;
+  }
+  if (!(_strcmp($name, 47217) | 0)) {
+   $retval$0 = 23;
+   break;
+  }
+  if (!(_strcmp($name, 47237) | 0)) {
+   $retval$0 = 2;
+   break;
+  }
+  if (!(_strcmp($name, 47250) | 0)) {
+   $retval$0 = 1;
+   break;
+  }
+  if (!(_strcmp($name, 47266) | 0)) {
+   $retval$0 = 23;
+   break;
+  }
+  if (!(_strcmp($name, 47283) | 0)) {
+   $retval$0 = 24;
+   break;
+  }
+  if (!(_strcmp($name, 47299) | 0)) {
+   $retval$0 = 25;
+   break;
+  }
+  if (!(_strcmp($name, 47316) | 0)) {
+   $retval$0 = 3;
+   break;
+  }
+  if (!(_strcmp($name, 47332) | 0)) {
+   $retval$0 = 1;
+   break;
+  }
+  if (!(_strcmp($name, 47344) | 0)) {
+   $retval$0 = 26;
+   break;
+  }
+  if (!(_strcmp($name, 47357) | 0)) {
+   $retval$0 = 37;
+   break;
+  }
+  if (!(_strcmp($name, 47369) | 0)) {
+   $retval$0 = 27;
+   break;
+  }
+  if (!(_strcmp($name, 47382) | 0)) {
+   $retval$0 = 1;
+   break;
+  }
+  if (!(_strcmp($name, 47394) | 0)) {
    $retval$0 = 28;
    break;
   }
-  if (!(_strcmp($name, 48154) | 0)) {
+  if (!(_strcmp($name, 47407) | 0)) {
+   $retval$0 = 29;
+   break;
+  }
+  if (!(_strcmp($name, 47419) | 0)) {
+   $retval$0 = 30;
+   break;
+  }
+  if (!(_strcmp($name, 47432) | 0)) {
+   $retval$0 = 1;
+   break;
+  }
+  if (!(_strcmp($name, 47444) | 0)) {
+   $retval$0 = 31;
+   break;
+  }
+  if (!(_strcmp($name, 47457) | 0)) {
+   $retval$0 = 24;
+   break;
+  }
+  if (!(_strcmp($name, 47469) | 0)) {
+   $retval$0 = 32;
+   break;
+  }
+  if (!(_strcmp($name, 47482) | 0)) {
+   $retval$0 = 1;
+   break;
+  }
+  if (!(_strcmp($name, 47494) | 0)) {
+   $retval$0 = 33;
+   break;
+  }
+  if (!(_strcmp($name, 47507) | 0)) {
    $retval$0 = 42;
    break;
   }
-  $tobool638 = (_strcmp($name, 48183) | 0) == 0;
+  if (!(_strcmp($name, 47519) | 0)) {
+   $retval$0 = 34;
+   break;
+  }
+  if (!(_strcmp($name, 47532) | 0)) {
+   $retval$0 = 25;
+   break;
+  }
+  if (!(_strcmp($name, 47551) | 0)) {
+   $retval$0 = 26;
+   break;
+  }
+  if (!(_strcmp($name, 47570) | 0)) {
+   $retval$0 = 27;
+   break;
+  }
+  if (!(_strcmp($name, 47589) | 0)) {
+   $retval$0 = 27;
+   break;
+  }
+  if (!(_strcmp($name, 47602) | 0)) {
+   $retval$0 = 28;
+   break;
+  }
+  if (!(_strcmp($name, 47620) | 0)) {
+   $retval$0 = 2;
+   break;
+  }
+  if (!(_strcmp($name, 47637) | 0)) {
+   $retval$0 = 38;
+   break;
+  }
+  if (!(_strcmp($name, 47655) | 0)) {
+   $retval$0 = 2;
+   break;
+  }
+  if (!(_strcmp($name, 47672) | 0)) {
+   $retval$0 = 39;
+   break;
+  }
+  if (!(_strcmp($name, 47690) | 0)) {
+   $retval$0 = 2;
+   break;
+  }
+  if (!(_strcmp($name, 47707) | 0)) {
+   $retval$0 = 40;
+   break;
+  }
+  if (!(_strcmp($name, 47725) | 0)) {
+   $retval$0 = 2;
+   break;
+  }
+  if (!(_strcmp($name, 47742) | 0)) {
+   $retval$0 = 41;
+   break;
+  }
+  if (!(_strcmp($name, 47760) | 0)) {
+   $retval$0 = 3;
+   break;
+  }
+  if (!(_strcmp($name, 47782) | 0)) {
+   $retval$0 = 28;
+   break;
+  }
+  if (!(_strcmp($name, 47793) | 0)) {
+   $retval$0 = 8;
+   break;
+  }
+  if (!(_strcmp($name, 47809) | 0)) {
+   $retval$0 = 9;
+   break;
+  }
+  if (!(_strcmp($name, 47828) | 0)) {
+   $retval$0 = 15;
+   break;
+  }
+  if (!(_strcmp($name, 47841) | 0)) {
+   $retval$0 = 10;
+   break;
+  }
+  if (!(_strcmp($name, 47857) | 0)) {
+   $retval$0 = 7;
+   break;
+  }
+  if (!(_strcmp($name, 47871) | 0)) {
+   $retval$0 = 11;
+   break;
+  }
+  if (!(_strcmp($name, 47889) | 0)) {
+   $retval$0 = 3;
+   break;
+  }
+  if (!(_strcmp($name, 47905) | 0)) {
+   $retval$0 = 4;
+   break;
+  }
+  if (!(_strcmp($name, 47927) | 0)) {
+   $retval$0 = 5;
+   break;
+  }
+  if (!(_strcmp($name, 47950) | 0)) {
+   $retval$0 = 6;
+   break;
+  }
+  if (!(_strcmp($name, 47974) | 0)) {
+   $retval$0 = 7;
+   break;
+  }
+  if (!(_strcmp($name, 47999) | 0)) {
+   $retval$0 = 8;
+   break;
+  }
+  if (!(_strcmp($name, 48020) | 0)) {
+   $retval$0 = 12;
+   break;
+  }
+  if (!(_strcmp($name, 48044) | 0)) {
+   $retval$0 = 13;
+   break;
+  }
+  if (!(_strcmp($name, 48065) | 0)) {
+   $retval$0 = 16;
+   break;
+  }
+  if (!(_strcmp($name, 48084) | 0)) {
+   $retval$0 = 14;
+   break;
+  }
+  if (!(_strcmp($name, 48103) | 0)) {
+   $retval$0 = 6;
+   break;
+  }
+  if (!(_strcmp($name, 48130) | 0)) {
+   $retval$0 = 39;
+   break;
+  }
+  $tobool638 = (_strcmp($name, 48159) | 0) == 0;
   return ($tobool638 ? 7 : 0) | 0;
  } while (0);
  return $retval$0 | 0;
@@ -28752,9 +28752,9 @@ function _rlglInit($width, $height) {
   $23 = HEAP32[$extList >> 2] | 0;
   if ((HEAP32[$i17 >> 2] | 0) >= (HEAP32[$numExt >> 2] | 0)) break;
   if (!(_strcmp(HEAP32[$23 + (HEAP32[$i17 >> 2] << 2) >> 2] | 0, 20874) | 0)) {
-   HEAP32[38734] = _eglGetProcAddress(48068) | 0;
-   HEAP32[38655] = _eglGetProcAddress(48023) | 0;
-   HEAP32[38733] = _eglGetProcAddress(48044) | 0;
+   HEAP32[38734] = _eglGetProcAddress(48044) | 0;
+   HEAP32[38655] = _eglGetProcAddress(47999) | 0;
+   HEAP32[38733] = _eglGetProcAddress(48020) | 0;
    if ((HEAP32[38734] | 0) != 0 & (HEAP32[38655] | 0) != 0 & (HEAP32[38733] | 0) != 0) HEAP8[156073] = 1;
   }
   if (!(_strcmp(HEAP32[(HEAP32[$extList >> 2] | 0) + (HEAP32[$i17 >> 2] << 2) >> 2] | 0, 20901) | 0)) HEAP8[156075] = 1;
@@ -31330,13 +31330,13 @@ function __emscripten_dceable_type_decls() {
  _emscripten_glTexImage2D(0, 0, 0, 0, 0, 0, 0, 0, 0);
  _emscripten_glTexParameterf(0, 0, Math_fround(0.0));
  _emscripten_glTexParameterfv(0, 0, 0);
+ _emscripten_glTexParameteri(0, 0, 0);
  _pthread_create(0, 0, 0, 0) | 0;
  _pthread_join(0, 0) | 0;
  _pthread_cond_init(0, 0) | 0;
  _pthread_cond_destroy(0) | 0;
  _pthread_attr_init(0) | 0;
  _pthread_attr_destroy(0) | 0;
- _emscripten_glTexParameteri(0, 0, 0);
  _emscripten_glTexParameteriv(0, 0, 0);
  _emscripten_glTexSubImage2D(0, 0, 0, 0, 0, 0, 0, 0, 0);
  _emscripten_glUniform1f(0, Math_fround(0.0));
@@ -57783,16 +57783,6 @@ function _ma_context_post_error($pContext, $pDevice, $logLevel, $message, $resul
  return HEAP32[$resultCode$addr >> 2] | 0;
 }
 
-function __webgl1_match_ext_proc_address_without_suffix($name) {
- $name = $name | 0;
- var $retval$0 = 0, $tobool70 = 0;
- if (!(_strcmp($name, 45178) | 0)) $retval$0 = 35; else if (!(_strcmp($name, 45191) | 0)) $retval$0 = 36; else if (!(_strcmp($name, 45207) | 0)) $retval$0 = 25; else if (!(_strcmp($name, 45217) | 0)) $retval$0 = 37; else if (!(_strcmp($name, 45230) | 0)) $retval$0 = 27; else if (!(_strcmp($name, 45241) | 0)) $retval$0 = 38; else if (!(_strcmp($name, 45256) | 0)) $retval$0 = 30; else if (!(_strcmp($name, 45269) | 0)) $retval$0 = 31; else if (!(_strcmp($name, 45288) | 0)) $retval$0 = 32; else if (!(_strcmp($name, 45308) | 0)) $retval$0 = 33; else if (!(_strcmp($name, 45329) | 0)) $retval$0 = 34; else if (!(_strcmp($name, 45351) | 0)) $retval$0 = 28; else if (!(_strcmp($name, 45369) | 0)) $retval$0 = 39; else if (!(_strcmp($name, 45390) | 0)) $retval$0 = 40; else if (!(_strcmp($name, 45408) | 0)) $retval$0 = 26; else if (!(_strcmp($name, 45424) | 0)) $retval$0 = 41; else if (!(_strcmp($name, 45438) | 0)) $retval$0 = 28; else if (!(_strcmp($name, 45460) | 0)) $retval$0 = 42; else {
-  $tobool70 = (_strcmp($name, 45484) | 0) == 0;
-  return ($tobool70 ? 7 : 0) | 0;
- }
- return $retval$0 | 0;
-}
-
 function _stbi__do_zlib($a, $obuf, $olen, $exp, $parse_header) {
  $a = $a | 0;
  $obuf = $obuf | 0;
@@ -57854,6 +57844,16 @@ function _ma_log($pContext, $pDevice, $logLevel, $message) {
  FUNCTION_TABLE_viiii[HEAP32[$onLog >> 2] & 31](HEAP32[$pContext$addr >> 2] | 0, HEAP32[$pDevice$addr >> 2] | 0, HEAP32[$logLevel$addr >> 2] | 0, HEAP32[$message$addr >> 2] | 0);
  STACKTOP = sp;
  return;
+}
+
+function __webgl1_match_ext_proc_address_without_suffix($name) {
+ $name = $name | 0;
+ var $retval$0 = 0, $tobool70 = 0;
+ if (!(_strcmp($name, 45154) | 0)) $retval$0 = 8; else if (!(_strcmp($name, 45167) | 0)) $retval$0 = 9; else if (!(_strcmp($name, 45183) | 0)) $retval$0 = 15; else if (!(_strcmp($name, 45193) | 0)) $retval$0 = 10; else if (!(_strcmp($name, 45206) | 0)) $retval$0 = 7; else if (!(_strcmp($name, 45217) | 0)) $retval$0 = 11; else if (!(_strcmp($name, 45232) | 0)) $retval$0 = 3; else if (!(_strcmp($name, 45245) | 0)) $retval$0 = 4; else if (!(_strcmp($name, 45264) | 0)) $retval$0 = 5; else if (!(_strcmp($name, 45284) | 0)) $retval$0 = 6; else if (!(_strcmp($name, 45305) | 0)) $retval$0 = 7; else if (!(_strcmp($name, 45327) | 0)) $retval$0 = 8; else if (!(_strcmp($name, 45345) | 0)) $retval$0 = 12; else if (!(_strcmp($name, 45366) | 0)) $retval$0 = 13; else if (!(_strcmp($name, 45384) | 0)) $retval$0 = 16; else if (!(_strcmp($name, 45400) | 0)) $retval$0 = 14; else if (!(_strcmp($name, 45414) | 0)) $retval$0 = 6; else if (!(_strcmp($name, 45436) | 0)) $retval$0 = 39; else {
+  $tobool70 = (_strcmp($name, 45460) | 0) == 0;
+  return ($tobool70 ? 7 : 0) | 0;
+ }
+ return $retval$0 | 0;
 }
 
 function _stbi__get8($s) {
@@ -63101,15 +63101,15 @@ function _emscripten_GetProcAddress($name_) {
  var $call1 = 0, $call12 = 0, $call16 = 0, $call20 = 0, $call3 = 0, $call4 = 0, $call8 = 0, $ptr$0 = 0;
  $call1 = _malloc((_strlen($name_) | 0) + 1 | 0) | 0;
  _strcpy($call1, $name_) | 0;
- $call3 = _strstr($call1, 45154) | 0;
+ $call3 = _strstr($call1, 48186) | 0;
  if ($call3 | 0) HEAP8[$call3 >> 0] = 0;
- $call4 = _strstr($call1, 45158) | 0;
+ $call4 = _strstr($call1, 48190) | 0;
  if ($call4 | 0) HEAP8[$call4 >> 0] = 0;
- $call8 = _strstr($call1, 45162) | 0;
+ $call8 = _strstr($call1, 48194) | 0;
  if ($call8 | 0) HEAP8[$call8 >> 0] = 0;
- $call12 = _strstr($call1, 45166) | 0;
+ $call12 = _strstr($call1, 48198) | 0;
  if ($call12 | 0) HEAP8[$call12 >> 0] = 0;
- $call16 = _strstr($call1, 45172) | 0;
+ $call16 = _strstr($call1, 48204) | 0;
  if ($call16 | 0) HEAP8[$call16 >> 0] = 0;
  $call20 = _emscripten_webgl1_get_proc_address($call1) | 0;
  if (!$call20) $ptr$0 = __webgl1_match_ext_proc_address_without_suffix($call1) | 0; else $ptr$0 = $call20;
@@ -68362,7 +68362,7 @@ function b9() {
 var FUNCTION_TABLE_ff = [b0,_stbir__support_zero,_stbir__support_trapezoid,_stbir__support_one,_stbir__support_two,b0,b0,b0];
 var FUNCTION_TABLE_fff = [b1,_stbir__filter_trapezoid,_stbir__filter_triangle,_stbir__filter_cubic,_stbir__filter_catmullrom,_stbir__filter_mitchell,b1,b1];
 var FUNCTION_TABLE_i = [b2,_emscripten_glCreateProgram,_emscripten_glGetError,b2];
-var FUNCTION_TABLE_ii = [b3,_stbi__stdio_eof,___stdio_close,___emscripten_stdout_close,_ma_context_uninit__webaudio,_ma_device_start__webaudio,_ma_device_stop__webaudio,_pthread_mutex_destroy,_pthread_mutex_lock,_pthread_mutex_unlock,_pthread_cond_destroy,_pthread_cond_signal,_pthread_attr_init,_pthread_attr_destroy,_ma_worker_thread,_emscripten_glCheckFramebufferStatus,_emscripten_glCreateShader,_emscripten_glGetString,_emscripten_glIsBuffer,_emscripten_glIsEnabled,_emscripten_glIsFramebuffer,_emscripten_glIsProgram,_emscripten_glIsRenderbuffer,_emscripten_glIsShader,_emscripten_glIsTexture,_emscripten_glIsQueryEXT,_emscripten_glIsVertexArrayOES,b3,b3
+var FUNCTION_TABLE_ii = [b3,_stbi__stdio_eof,___stdio_close,___emscripten_stdout_close,_ma_context_uninit__webaudio,_ma_device_start__webaudio,_ma_device_stop__webaudio,_pthread_mutex_destroy,_pthread_mutex_lock,_pthread_mutex_unlock,_pthread_cond_destroy,_pthread_cond_signal,_pthread_attr_init,_pthread_attr_destroy,_ma_worker_thread,_emscripten_glIsQueryEXT,_emscripten_glIsVertexArrayOES,_emscripten_glCheckFramebufferStatus,_emscripten_glCreateShader,_emscripten_glGetString,_emscripten_glIsBuffer,_emscripten_glIsEnabled,_emscripten_glIsFramebuffer,_emscripten_glIsProgram,_emscripten_glIsRenderbuffer,_emscripten_glIsShader,_emscripten_glIsTexture,b3,b3
 ,b3,b3,b3];
 var FUNCTION_TABLE_iidiiii = [b4,_fmt_fp];
 var FUNCTION_TABLE_iii = [b5,_pthread_join,_pthread_mutex_init,_pthread_cond_init,_pthread_cond_wait,_stbv_point_compare,_stbv_uint32_compare,_emscripten_glGetAttribLocation,_emscripten_glGetUniformLocation,b5,b5,b5,b5,b5,b5,b5];
@@ -68374,24 +68374,24 @@ var FUNCTION_TABLE_vf = [b10,_emscripten_glClearDepthf$legalf32,_emscripten_glLi
 var FUNCTION_TABLE_vff = [b11,_emscripten_glDepthRangef$legalf32,_emscripten_glPolygonOffset$legalf32,b11];
 var FUNCTION_TABLE_vffff = [b12,_emscripten_glBlendColor$legalf32,_emscripten_glClearColor$legalf32,b12];
 var FUNCTION_TABLE_vfi = [b13,_emscripten_glSampleCoverage$legalf32];
-var FUNCTION_TABLE_vi = [b14,__ZN10__cxxabiv116__shim_type_infoD2Ev,__ZN10__cxxabiv117__class_type_infoD0Ev,__ZNK10__cxxabiv116__shim_type_info5noop1Ev,__ZNK10__cxxabiv116__shim_type_info5noop2Ev,__ZN10__cxxabiv120__si_class_type_infoD0Ev,_ma_device_uninit__webaudio,_emscripten_glActiveTexture,_emscripten_glBlendEquation,_emscripten_glClear,_emscripten_glClearStencil,_emscripten_glCompileShader,_emscripten_glCullFace,_emscripten_glDeleteProgram,_emscripten_glDeleteShader,_emscripten_glDepthFunc,_emscripten_glDepthMask,_emscripten_glDisable,_emscripten_glDisableVertexAttribArray,_emscripten_glEnable,_emscripten_glEnableVertexAttribArray,_emscripten_glFrontFace,_emscripten_glGenerateMipmap,_emscripten_glLinkProgram,_emscripten_glStencilMask,_emscripten_glUseProgram,_emscripten_glValidateProgram,_emscripten_glEndQueryEXT,_emscripten_glBindVertexArrayOES
+var FUNCTION_TABLE_vi = [b14,__ZN10__cxxabiv116__shim_type_infoD2Ev,__ZN10__cxxabiv117__class_type_infoD0Ev,__ZNK10__cxxabiv116__shim_type_info5noop1Ev,__ZNK10__cxxabiv116__shim_type_info5noop2Ev,__ZN10__cxxabiv120__si_class_type_infoD0Ev,_ma_device_uninit__webaudio,_emscripten_glEndQueryEXT,_emscripten_glBindVertexArrayOES,_emscripten_glActiveTexture,_emscripten_glBlendEquation,_emscripten_glClear,_emscripten_glClearStencil,_emscripten_glCompileShader,_emscripten_glCullFace,_emscripten_glDeleteProgram,_emscripten_glDeleteShader,_emscripten_glDepthFunc,_emscripten_glDepthMask,_emscripten_glDisable,_emscripten_glDisableVertexAttribArray,_emscripten_glEnable,_emscripten_glEnableVertexAttribArray,_emscripten_glFrontFace,_emscripten_glGenerateMipmap,_emscripten_glLinkProgram,_emscripten_glStencilMask,_emscripten_glUseProgram,_emscripten_glValidateProgram
 ,b14,b14,b14];
 var FUNCTION_TABLE_vidd = [b15,_MouseCursorPosCallback,_ScrollCallback,b15];
 var FUNCTION_TABLE_vif = [b16,_emscripten_glUniform1f$legalf32,_emscripten_glVertexAttrib1f$legalf32,b16];
 var FUNCTION_TABLE_viff = [b17,_emscripten_glUniform2f$legalf32,_emscripten_glVertexAttrib2f$legalf32,b17];
 var FUNCTION_TABLE_vifff = [b18,_emscripten_glUniform3f$legalf32,_emscripten_glVertexAttrib3f$legalf32,b18];
 var FUNCTION_TABLE_viffff = [b19,_emscripten_glUniform4f$legalf32,_emscripten_glVertexAttrib4f$legalf32,b19];
-var FUNCTION_TABLE_vii = [b20,_stbi__stdio_skip,_ErrorCallback,_CursorEnterCallback,_CharCallback,_WindowIconifyCallback,_pop_arg_long_double,_emscripten_glVertexAttribDivisorANGLE,_emscripten_glAttachShader,_emscripten_glBindBuffer,_emscripten_glBindFramebuffer,_emscripten_glBindRenderbuffer,_emscripten_glBindTexture,_emscripten_glBlendEquationSeparate,_emscripten_glBlendFunc,_emscripten_glDeleteBuffers,_emscripten_glDeleteFramebuffers,_emscripten_glDeleteRenderbuffers,_emscripten_glDeleteTextures,_emscripten_glDetachShader,_emscripten_glGenBuffers,_emscripten_glGenFramebuffers,_emscripten_glGenRenderbuffers,_emscripten_glGenTextures,_emscripten_glGetBooleanv,_emscripten_glGetFloatv,_emscripten_glGetIntegerv,_emscripten_glHint,_emscripten_glPixelStorei
-,_emscripten_glStencilMaskSeparate,_emscripten_glUniform1i,_emscripten_glVertexAttrib1fv,_emscripten_glVertexAttrib2fv,_emscripten_glVertexAttrib3fv,_emscripten_glVertexAttrib4fv,_emscripten_glGenQueriesEXT,_emscripten_glDeleteQueriesEXT,_emscripten_glBeginQueryEXT,_emscripten_glQueryCounterEXT,_emscripten_glDeleteVertexArraysOES,_emscripten_glGenVertexArraysOES,_emscripten_glDrawBuffersWEBGL,b20,b20,b20,b20,b20,b20,b20,b20,b20,b20,b20,b20,b20,b20,b20,b20,b20
+var FUNCTION_TABLE_vii = [b20,_stbi__stdio_skip,_ErrorCallback,_CursorEnterCallback,_CharCallback,_WindowIconifyCallback,_pop_arg_long_double,_emscripten_glVertexAttribDivisorANGLE,_emscripten_glGenQueriesEXT,_emscripten_glDeleteQueriesEXT,_emscripten_glBeginQueryEXT,_emscripten_glQueryCounterEXT,_emscripten_glDeleteVertexArraysOES,_emscripten_glGenVertexArraysOES,_emscripten_glDrawBuffersWEBGL,_emscripten_glAttachShader,_emscripten_glBindBuffer,_emscripten_glBindFramebuffer,_emscripten_glBindRenderbuffer,_emscripten_glBindTexture,_emscripten_glBlendEquationSeparate,_emscripten_glBlendFunc,_emscripten_glDeleteBuffers,_emscripten_glDeleteFramebuffers,_emscripten_glDeleteRenderbuffers,_emscripten_glDeleteTextures,_emscripten_glDetachShader,_emscripten_glGenBuffers,_emscripten_glGenFramebuffers
+,_emscripten_glGenRenderbuffers,_emscripten_glGenTextures,_emscripten_glGetBooleanv,_emscripten_glGetFloatv,_emscripten_glGetIntegerv,_emscripten_glHint,_emscripten_glPixelStorei,_emscripten_glStencilMaskSeparate,_emscripten_glUniform1i,_emscripten_glVertexAttrib1fv,_emscripten_glVertexAttrib2fv,_emscripten_glVertexAttrib3fv,_emscripten_glVertexAttrib4fv,b20,b20,b20,b20,b20,b20,b20,b20,b20,b20,b20,b20,b20,b20,b20,b20,b20
 ,b20,b20,b20,b20,b20];
 var FUNCTION_TABLE_viif = [b21,_emscripten_glTexParameterf$legalf32];
-var FUNCTION_TABLE_viii = [b22,_WindowSizeCallback,_WindowDropCallback,_emscripten_glBindAttribLocation,_emscripten_glDrawArrays,_emscripten_glGetBufferParameteriv,_emscripten_glGetProgramiv,_emscripten_glGetRenderbufferParameteriv,_emscripten_glGetShaderiv,_emscripten_glGetTexParameterfv,_emscripten_glGetTexParameteriv,_emscripten_glGetUniformfv,_emscripten_glGetUniformiv,_emscripten_glGetVertexAttribfv,_emscripten_glGetVertexAttribiv,_emscripten_glGetVertexAttribPointerv,_emscripten_glStencilFunc,_emscripten_glStencilOp,_emscripten_glTexParameterfv,_emscripten_glTexParameteri,_emscripten_glTexParameteriv,_emscripten_glUniform1fv,_emscripten_glUniform1iv,_emscripten_glUniform2fv,_emscripten_glUniform2i,_emscripten_glUniform2iv,_emscripten_glUniform3fv,_emscripten_glUniform3iv,_emscripten_glUniform4fv
-,_emscripten_glUniform4iv,_emscripten_glGetQueryivEXT,_emscripten_glGetQueryObjectivEXT,_emscripten_glGetQueryObjectuivEXT,_emscripten_glGetQueryObjecti64vEXT,_emscripten_glGetQueryObjectui64vEXT,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22
+var FUNCTION_TABLE_viii = [b22,_WindowSizeCallback,_WindowDropCallback,_emscripten_glGetQueryivEXT,_emscripten_glGetQueryObjectivEXT,_emscripten_glGetQueryObjectuivEXT,_emscripten_glGetQueryObjecti64vEXT,_emscripten_glGetQueryObjectui64vEXT,_emscripten_glBindAttribLocation,_emscripten_glDrawArrays,_emscripten_glGetBufferParameteriv,_emscripten_glGetProgramiv,_emscripten_glGetRenderbufferParameteriv,_emscripten_glGetShaderiv,_emscripten_glGetTexParameterfv,_emscripten_glGetTexParameteriv,_emscripten_glGetUniformfv,_emscripten_glGetUniformiv,_emscripten_glGetVertexAttribfv,_emscripten_glGetVertexAttribiv,_emscripten_glGetVertexAttribPointerv,_emscripten_glStencilFunc,_emscripten_glStencilOp,_emscripten_glTexParameterfv,_emscripten_glTexParameteri,_emscripten_glTexParameteriv,_emscripten_glUniform1fv,_emscripten_glUniform1iv,_emscripten_glUniform2fv
+,_emscripten_glUniform2i,_emscripten_glUniform2iv,_emscripten_glUniform3fv,_emscripten_glUniform3iv,_emscripten_glUniform4fv,_emscripten_glUniform4iv,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22,b22
 ,b22,b22,b22,b22,b22];
-var FUNCTION_TABLE_viiii = [b23,__ZNK10__cxxabiv117__class_type_info27has_unambiguous_public_baseEPNS_19__dynamic_cast_infoEPvi,__ZNK10__cxxabiv120__si_class_type_info27has_unambiguous_public_baseEPNS_19__dynamic_cast_infoEPvi,_MouseButtonCallback,_OnLog,_OnSendAudioDataToDevice,_emscripten_glBlendFuncSeparate,_emscripten_glBufferData,_emscripten_glBufferSubData,_emscripten_glColorMask,_emscripten_glDrawElements,_emscripten_glFramebufferRenderbuffer,_emscripten_glGetAttachedShaders,_emscripten_glGetFramebufferAttachmentParameteriv,_emscripten_glGetProgramInfoLog,_emscripten_glGetShaderInfoLog,_emscripten_glGetShaderPrecisionFormat,_emscripten_glGetShaderSource,_emscripten_glRenderbufferStorage,_emscripten_glScissor,_emscripten_glShaderSource,_emscripten_glStencilFuncSeparate,_emscripten_glStencilOpSeparate,_emscripten_glUniform3i,_emscripten_glUniformMatrix2fv,_emscripten_glUniformMatrix3fv,_emscripten_glUniformMatrix4fv,_emscripten_glViewport,_emscripten_glDrawArraysInstancedANGLE
+var FUNCTION_TABLE_viiii = [b23,__ZNK10__cxxabiv117__class_type_info27has_unambiguous_public_baseEPNS_19__dynamic_cast_infoEPvi,__ZNK10__cxxabiv120__si_class_type_info27has_unambiguous_public_baseEPNS_19__dynamic_cast_infoEPvi,_MouseButtonCallback,_OnLog,_OnSendAudioDataToDevice,_emscripten_glDrawArraysInstancedANGLE,_emscripten_glBlendFuncSeparate,_emscripten_glBufferData,_emscripten_glBufferSubData,_emscripten_glColorMask,_emscripten_glDrawElements,_emscripten_glFramebufferRenderbuffer,_emscripten_glGetAttachedShaders,_emscripten_glGetFramebufferAttachmentParameteriv,_emscripten_glGetProgramInfoLog,_emscripten_glGetShaderInfoLog,_emscripten_glGetShaderPrecisionFormat,_emscripten_glGetShaderSource,_emscripten_glRenderbufferStorage,_emscripten_glScissor,_emscripten_glShaderSource,_emscripten_glStencilFuncSeparate,_emscripten_glStencilOpSeparate,_emscripten_glUniform3i,_emscripten_glUniformMatrix2fv,_emscripten_glUniformMatrix3fv,_emscripten_glUniformMatrix4fv,_emscripten_glViewport
 ,b23,b23,b23];
 var FUNCTION_TABLE_viiiii = [b24,__ZNK10__cxxabiv117__class_type_info16search_below_dstEPNS_19__dynamic_cast_infoEPKvib,__ZNK10__cxxabiv120__si_class_type_info16search_below_dstEPNS_19__dynamic_cast_infoEPKvib,_KeyCallback,_ma_pcm_interleave_u8,_ma_pcm_deinterleave_u8,_ma_pcm_interleave_s16,_ma_pcm_deinterleave_s16,_ma_pcm_interleave_s24,_ma_pcm_deinterleave_s24,_ma_pcm_interleave_s32,_ma_pcm_deinterleave_s32,_ma_pcm_interleave_f32,_ma_pcm_deinterleave_f32,_ma_pcm_u8_to_u8,_ma_pcm_u8_to_s16,_ma_pcm_u8_to_s24,_ma_pcm_u8_to_s32,_ma_pcm_u8_to_f32,_ma_pcm_s16_to_u8,_ma_pcm_s16_to_s16,_ma_pcm_s16_to_s24,_ma_pcm_s16_to_s32,_ma_pcm_s16_to_f32,_ma_pcm_s24_to_u8,_ma_pcm_s24_to_s16,_ma_pcm_s24_to_s24,_ma_pcm_s24_to_s32,_ma_pcm_s24_to_f32
-,_ma_pcm_s32_to_u8,_ma_pcm_s32_to_s16,_ma_pcm_s32_to_s24,_ma_pcm_s32_to_s32,_ma_pcm_s32_to_f32,_ma_pcm_f32_to_u8,_ma_pcm_f32_to_s16,_ma_pcm_f32_to_s24,_ma_pcm_f32_to_s32,_ma_pcm_f32_to_f32,_emscripten_glFramebufferTexture2D,_emscripten_glShaderBinary,_emscripten_glUniform4i,_emscripten_glDrawElementsInstancedANGLE,b24,b24,b24,b24,b24,b24,b24,b24,b24,b24,b24,b24,b24,b24,b24,b24
+,_ma_pcm_s32_to_u8,_ma_pcm_s32_to_s16,_ma_pcm_s32_to_s24,_ma_pcm_s32_to_s32,_ma_pcm_s32_to_f32,_ma_pcm_f32_to_u8,_ma_pcm_f32_to_s16,_ma_pcm_f32_to_s24,_ma_pcm_f32_to_s32,_ma_pcm_f32_to_f32,_emscripten_glDrawElementsInstancedANGLE,_emscripten_glFramebufferTexture2D,_emscripten_glShaderBinary,_emscripten_glUniform4i,b24,b24,b24,b24,b24,b24,b24,b24,b24,b24,b24,b24,b24,b24,b24,b24
 ,b24,b24,b24,b24,b24];
 var FUNCTION_TABLE_viiiiii = [b25,__ZNK10__cxxabiv117__class_type_info16search_above_dstEPNS_19__dynamic_cast_infoEPKvS4_ib,__ZNK10__cxxabiv120__si_class_type_info16search_above_dstEPNS_19__dynamic_cast_infoEPKvS4_ib,_emscripten_glVertexAttribPointer];
 var FUNCTION_TABLE_viiiiiii = [b26,_emscripten_glGetActiveAttrib,_emscripten_glGetActiveUniform,_emscripten_glReadPixels];
