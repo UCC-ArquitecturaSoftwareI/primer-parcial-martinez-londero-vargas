@@ -1,8 +1,7 @@
 //
 // Created by micav on 25/04/2020.
 //
-//#include <iostream>
-
+#include <iostream>
 #include "Map.h"
 #include "../libreria/tileson.hpp"
 #include <cmath>
@@ -14,7 +13,8 @@ Map::Map (std::string file) {
     // dibujo =LoadTexture(img.c_str());
     if (map.getStatus() == tson::ParseStatus::OK) {
         for (auto &tileset : map.getTilesets()) {
-            map_tex = LoadTexture(fs::path("resources/mapa" + tileset.getImage().string()).c_str());
+            map_tex = LoadTexture(reinterpret_cast<const char *>(fs::path(
+                    "resources/tilesfinal.tmx" + tileset.getImage().string()).c_str()));
             map_tileset = &tileset;
         }
 
