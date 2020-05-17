@@ -1,6 +1,8 @@
 #include <raylib.h>
 #include <string>
 #include "Animator.h"
+#include <vector>
+#include "Bullet.h"
 
 #ifndef RAYLIBTEMPLATE_CHARACTER_H
 #define RAYLIBTEMPLATE_CHARACTER_H
@@ -19,19 +21,18 @@ protected:
     char_estado estado;
     int mirar;
     bool canJump;
+    int Life;
 public:
     const Vector2 &getCharacterPos() const;
+   // std::vector<Bullet*> bullet;
 
-protected:
-    int Life;
-
-public:
     Character(std::string text, const Vector2 &characterPos);
 
     void draw();
     void move_x(float d);
     void move_y(float d);
     void shoot();
+    Bullet *bullet;
 
 
 };

@@ -1,0 +1,8 @@
+//
+// Created by micav on 16/05/2020.
+//
+
+#ifndef RAYLIBTEMPLATE_BUTTONS_H
+#define RAYLIBTEMPLATE_BUTTONS_H
+
+#endif //RAYLIBTEMPLATE_BUTTONS_H
