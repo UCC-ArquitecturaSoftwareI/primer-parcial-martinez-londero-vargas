@@ -8,7 +8,7 @@
 
 Map::Map (std::string file) {
     tson::Tileson parser;
-    map = parser.parse(fs::path(file));
+    map = parser.parse(fs::path("resources/Level/" +file));
     //dibujo =LoadTexture(img.c_str());
     if (map.getStatus() == tson::ParseStatus::OK) {
 
@@ -18,7 +18,7 @@ Map::Map (std::string file) {
         }
 
 
-        auto objs = map.getLayer("objetos");
+        auto objs = map.getLayer("Player");
         tson::Object *player = objs->firstObj("player");
         player_init_pos.x = player->getPosition().x;
         player_init_pos.x = player->getPosition().y;
@@ -60,7 +60,7 @@ void Map::dibujar() {
     tile_rec.width = map.getTileSize().x;
     tile_rec.height = map.getTileSize().y;
 
-    int firstId = map_tileset -> getFirstgid();
+    int firstId = map_tileset->getFirstgid();
     int columns = map_tileset->getColumns();
     int margin = map_tileset->getMargin();
     int space = map_tileset->getSpacing();
@@ -68,7 +68,7 @@ void Map::dibujar() {
     auto &c=map.getBackgroundColor();
     ClearBackground({c.r,c.g,c.b,c.a});
 
-    for (auto nombre: {"Fondo", "Frente"}) {
+    for (auto nombre: {"Fondo"}) {
         auto *layer = map.getLayer(nombre);
         for (auto&[pos,tile]: layer->getTileData())
         {
