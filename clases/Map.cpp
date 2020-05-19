@@ -1,20 +1,19 @@
 //
 // Created by micav on 25/04/2020.
 //
-#include <iostream>
 #include "Map.h"
-#include "../libreria/tileson.hpp"
-#include <cmath>
+#include <iostream>
+
 #include <string>
 
 Map::Map (std::string file) {
     tson::Tileson parser;
     map = parser.parse(fs::path(file));
-    // dibujo =LoadTexture(img.c_str());
+    //dibujo =LoadTexture(img.c_str());
     if (map.getStatus() == tson::ParseStatus::OK) {
+
         for (auto &tileset : map.getTilesets()) {
-            map_tex = LoadTexture(reinterpret_cast<const char *>(fs::path(
-                    "resources/tilesfinal.tmx" + tileset.getImage().string()).c_str()));
+            map_text = LoadTexture(("resources/Level/" + tileset.getImage().string()).c_str());
             map_tileset = &tileset;
         }
 
@@ -85,7 +84,7 @@ void Map::dibujar() {
 
                 tile_rec.x = offsetX;
                 tile_rec.y = offsetY;
-                DrawTextureRec(map_tex, tile_rec,{position.x, position.y}, WHITE);
+                DrawTextureRec(map_text, tile_rec,{position.x, position.y}, WHITE);
 
             }
         }
@@ -98,3 +97,36 @@ void Map::dibujar() {
 
 }
 
+/*
+
+#include "Map.h"
+#include <string>
+
+Map::Map (std::string img)
+{
+    dibujo =LoadTexture(img.c_str());
+    x=0;
+    y=0;
+}
+
+int Map::getX() {
+    return x;
+}
+
+void Map::setX(int x) {
+    Map::x += x;
+}
+
+int Map::getY() {
+    return y;
+}
+
+void Map::setY(int y) {
+    Map::y += y;
+}
+
+void Map::dibujar() {
+    DrawTexture(dibujo,x,y,WHITE);
+}
+ }
+*/

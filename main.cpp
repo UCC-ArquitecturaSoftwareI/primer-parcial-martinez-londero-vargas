@@ -1,10 +1,7 @@
 #include <raylib.h>
 
 #include "clases/Character.h"
-
 #include "clases/Map.h"
-
-
 #if defined(PLATFORM_WEB) // Para crear HTML5
 
 #include <emscripten/emscripten.h>
@@ -34,7 +31,7 @@ int main() {
 
     //PlayMusicStream(music);
     player = new Character("resources/Run.png", Vector2{screenWidth / 2, screenHeight - 80});
-    map = new Map("resources/tilesjson.json");
+    map = new Map("tilesfinal1.json");
 
 
     background = LoadTexture("resources/fondo.png");
@@ -59,7 +56,7 @@ int main() {
     // Descargar todos los resources cargados
 
     //UnloadMusicStream(music);   // Descargo la musica de RAM
-   // CloseAudioDevice();         // Cierro el dispositivo de Audio
+    // CloseAudioDevice();         // Cierro el dispositivo de Audio
     CloseWindow();              // Cierro la ventana
     return 0;
 }
@@ -90,12 +87,13 @@ static void UpdateDrawFrame(void) {
     if (IsKeyDown(KEY_UP)) {
         player->move_y(-2.0f);
     }
-   /* if (IsKeyDown(KEY_DOWN)) {
-        player->move_y(2.0f);
-    }
-    */
+    /* if (IsKeyDown(KEY_DOWN)) {
+         player->move_y(2.0f);
+     }
+     */
     if (IsKeyDown(KEY_SPACE)) {
-        player->shoot();}
+        player->shoot();
+    }
 
 
 
@@ -120,9 +118,4 @@ static void UpdateDrawFrame(void) {
 
     // Finalizo el dibujado
     EndDrawing();
-<<<<<<< HEAD
-
 }
-=======
-}
->>>>>>> refs/remotes/origin/developer/Mica
