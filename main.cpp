@@ -31,7 +31,7 @@ int main() {
 
     //PlayMusicStream(music);
     player = new Character("resources/Run.png", Vector2{screenWidth / 2, screenHeight - 80});
-    map = new Map("tilesfinal1.json");
+    map = new Map("tiles.json");
 
 
     background = LoadTexture("resources/fondo.png");
@@ -75,28 +75,21 @@ static void UpdateDrawFrame(void) {
 
     // Verifico Entradas de eventos.
     if (IsKeyDown(KEY_RIGHT)) {
-        if (player->getCharacterPos().x > 600)
-            map->setX(-3);
-        else player->move_x(2.0f);
+        //if (player->getCharacterPos().x > 600)
+          //  map->setX(-3);
+        player->move_x(2.0f);
     }
     if (IsKeyDown(KEY_LEFT)) {
-        if (player->getCharacterPos().x < 400)
-            map->setX(3);
-        else player->move_x(-2.0f);
+        //if (player->getCharacterPos().x < 400)
+            //map->setX(3);
+            player->move_x(-2.0f);
     }
     if (IsKeyDown(KEY_UP)) {
-        player->move_y(-2.0f);
+        player->jump(1.0f);
     }
-    /* if (IsKeyDown(KEY_DOWN)) {
+     if (IsKeyDown(KEY_DOWN)) {
          player->move_y(2.0f);
      }
-     */
-    if (IsKeyDown(KEY_SPACE)) {
-        player->shoot();
-    }
-
-
-
 
     // Comienzo a dibujar
     BeginDrawing();
