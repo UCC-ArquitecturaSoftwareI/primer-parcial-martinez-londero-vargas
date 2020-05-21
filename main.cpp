@@ -3,6 +3,7 @@
 #include "clases/Character.h"
 #include "clases/Map.h"
 #include "clases/Enemy.h"
+#include "clases/Coin.h"
 
 #if defined(PLATFORM_WEB) // Para crear HTML5
 #include <emscripten/emscripten.h>
@@ -17,6 +18,7 @@ Character *player;
 Map *map;
 Texture2D background;
 Enemy *enemigo;
+Coin *coins;
 
 static void UpdateDrawFrame(void);          // Función dedicada a operar cada frame
 
@@ -32,6 +34,7 @@ int main() {
     player = new Character("resources/Run.png", Vector2{screenWidth / 2, screenHeight - 80});
     map = new Map("tiles.json");
     enemigo = new Enemy("resources/Enemy.png", Vector2{screenWidth / 2, screenHeight - 180});
+    coins = new Coin("coin.png",Vector2{screenWidth / 2, screenHeight - 10});
 
     background = LoadTexture("resources/54147.png");
     float background_x = 0;
@@ -63,30 +66,30 @@ int main() {
  *  del juego.
  */
 
-
 static void UpdateDrawFrame(void) {
 
     // siempre hay que reproducir la musica que esta actualmente
-    UpdateMusicStream(music);
+    //UpdateMusicStream(music);
 
     // Verifico Entradas de eventos.
     if (IsKeyDown(KEY_RIGHT)) {
-        if (player->getCharacterPos().x > 600)
-            map->setX(-3);
-        else player->move_x(2.0f);
+        //if (player->getCharacterPos().x > 600)
+        //  map->setX(-3);
+        player->move_x(2.0f);
+
     }
     if (IsKeyDown(KEY_LEFT)) {
-        if (player->getCharacterPos().x < 400)
-            map->setX(3);
-        else player->move_x(-2.0f);
+        //if (player->getCharacterPos().x < 400)
+        //map->setX(3);
+        player->move_x(-2.0f);
+
     }
     if (IsKeyDown(KEY_UP)) {
-        player->move_y(-2.0f);
+        player->jump(1.0f);
     }
     if (IsKeyDown(KEY_DOWN)) {
         player->move_y(2.0f);
     }
-
 
 
 
@@ -102,7 +105,7 @@ static void UpdateDrawFrame(void) {
     // Dibujo todos los elementos del juego.
 
     player->draw();
-    enemigo->draw();
+    //enemigo->draw();
 
     // Finalizo el dibujado
     EndDrawing();

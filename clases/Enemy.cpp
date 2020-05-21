@@ -4,7 +4,7 @@
 Enemy::Enemy(std::string text, const Vector2 &EnemyPos) : Enemy_pos(EnemyPos) {
     Estado = STOP;
     mirar = 0;
-    anim[0] = new Animator("resources/Enemy.png", 512, 512, 8);
+    anim[0] = new Animator(text, 512, 512, 8);
 
 }
 
