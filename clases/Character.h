@@ -9,7 +9,8 @@
 enum char_estado{
         QUIETO,
         CORRIENDO,
-        DISPARANDO
+        DISPARANDO,
+        SALTANDO
 } ;
 
 class Character {

@@ -1,7 +1,3 @@
-//
-// Created by martin on 28/4/20.
-//
-
 #include <string>
 #include <iostream>
 #include "Animator.h"

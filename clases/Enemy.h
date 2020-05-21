@@ -1,21 +1,29 @@
-//
-// Created by RIBEIRO on 24/4/2020.
-//
-
+#include <raylib.h>
+#include <string>
+#include "Animator.h"
 #ifndef RAYLIBTEMPLATE_ENEMY_H
 #define RAYLIBTEMPLATE_ENEMY_H
+enum estado{
+    STOP,
+    ADELANTE
+} ;
 
-#include "Character.h"
-
-class Enemy: public Character {
-
+class Enemy {
 protected:
+    Animator *anim[1];
+    Vector2 Enemy_pos;
+    estado Estado;
+    int mirar;
 
-    int Level; (nivel de daño que produce)
+public:
+    const Vector2 &getEnemyPos() const;
 
-public
+    Enemy(std::string text, const Vector2 &EnemyPos);
 
-    Enemy(std::string text, const Vector2 &EnemyPos):{};
+    void draw();
+    void move_x(float d);
+    void move_y(float d);
+
 
 
 };

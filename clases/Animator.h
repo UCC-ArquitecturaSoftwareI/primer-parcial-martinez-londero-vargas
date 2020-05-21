@@ -1,8 +1,9 @@
-//
-// Created by martin on 28/4/20.
-//
-
 #ifndef RAYLIBTEMPLATE_ANIMATOR_H
+#define RAYLIBTEMPLATE_ANIMATOR_H
+
+
+#include <raylib.h>
+
 #define RAYLIBTEMPLATE_ANIMATOR_H
 
 
@@ -23,5 +24,5 @@ public:
     void draw(Vector2 character_pos, int mirar);
 };
 
-
 #endif //RAYLIBTEMPLATE_ANIMATOR_H
+

@@ -1,13 +1,15 @@
-
 #include <string>
 #include "Character.h"
+
+
 
 Character::Character(std::string text, const Vector2 &characterPos) : character_pos(characterPos) {
     estado = QUIETO;
     mirar = 0;
     anim[0] = new Animator(text, 57, 64, 8);
-    anim[2] = new Animator(text, 57, 64, 1);
-    anim[1] = new Animator("resources/run-shoot-6.png", 64, 64, 1);
+    anim[2] = new Animator("resources/walk-5.png", 57, 64, 1);
+    anim[1] = new Animator("resources/shoot2.png", 57, 64, 7);
+    anim[3] = new Animator("resources/jump2.png", 134, 66, 7);
 }
 
 void Character::draw() {
@@ -21,6 +23,8 @@ void Character::draw() {
         case QUIETO:
             anim[2]->draw(character_pos, mirar);
             break;
+        case SALTANDO:
+            anim[3]->draw(character_pos,mirar);
 
     }
 }
@@ -37,16 +41,11 @@ void Character::move_x(float d) {
 
 void Character::move_y(float d) {
     character_pos.y += d;
-    estado = CORRIENDO;
+    estado = SALTANDO;
 }
 
-void Character::shoot() {
-    estado = DISPARANDO;
-}
 
 const Vector2 &Character::getCharacterPos() const {
     return character_pos;
 }
-
-
 
