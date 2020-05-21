@@ -1,6 +1,3 @@
-//
-// Created by micav on 25/04/2020.
-//
 #include "Map.h"
 #include <iostream>
 
@@ -8,7 +5,7 @@
 
 Map::Map (std::string file) {
     tson::Tileson parser;
-    map = parser.parse(fs::path("resources/Level/" +file));
+    map = parser.parse(fs::path("resources/Level/" + file));
     //dibujo =LoadTexture(img.c_str());
     if (map.getStatus() == tson::ParseStatus::OK) {
 
@@ -33,8 +30,8 @@ Map::Map (std::string file) {
 }
 
 
-  //  x=0;
-   // y=0;
+//  x=0;
+// y=0;
 
 
 int Map::getX() {
@@ -68,7 +65,7 @@ void Map::dibujar() {
     auto &c=map.getBackgroundColor();
     ClearBackground({c.r,c.g,c.b,c.a});
 
-    for (auto nombre: {"Fondo"}) {
+    for (auto nombre: {"Fondo", "Frente1", "Frente2","Frente3"}) {
         auto *layer = map.getLayer(nombre);
         for (auto&[pos,tile]: layer->getTileData())
         {
