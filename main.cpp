@@ -4,39 +4,21 @@
 #include "clases/Map.h"
 #include "clases/Enemy.h"
 #include "clases/Coin.h"
+#include "clases/Singleton.h"
 
 #if defined(PLATFORM_WEB) // Para crear HTML5
 #include <emscripten/emscripten.h>
 #endif
 
-const int screenWidth = 800;
-const int screenHeight = 450;
-
-// Variables Globales
-Music music;
-Character *player;
-Map *map;
-Texture2D background;
-Enemy *enemigo;
-Coin *coins;
 
 static void UpdateDrawFrame(void);          // Función dedicada a operar cada frame
 
 int main() {
-    // Inicialización de la ventana
-    InitWindow(screenWidth, screenHeight, "raylib template - advance game");
+    // Inicialización de la
+    int screenWidth = 800;
+    int screenHeight = 450;
+    InitWindow(screenWidth, screenHeight, "CaMica");
     InitAudioDevice();              // Initialize audio device
-
-    /// Ejemplo de utilización de audio.
-    music = LoadMusicStream("resources/Cyberpunk Moonlight Sonata.mp3");
-
-    //PlayMusicStream(music);
-    player = new Character("resources/Run.png", Vector2{screenWidth / 2, screenHeight - 80});
-    map = new Map("tiles.json");
-    enemigo = new Enemy("resources/Enemy.png", Vector2{screenWidth / 2, screenHeight - 180});
-    coins = new Coin("coin.png",Vector2{screenWidth / 2, screenHeight - 10});
-
-    background = LoadTexture("resources/54147.png");
     float background_x = 0;
     float background_y = 0;
 
@@ -51,12 +33,12 @@ int main() {
     }
 #endif
 
-
+    Singleton &Global = Singleton::get();
     // Descargar todos los resources cargados
 
-    UnloadMusicStream(music);   // Descargo la musica de RAM
+    UnloadMusicStream(Global.music);   // Descargo la musica de RAM
+    CloseWindow();
     CloseAudioDevice();         // Cierro el dispositivo de Audio
-    CloseWindow();              // Cierro la ventana
     return 0;
 }
 
@@ -67,28 +49,29 @@ int main() {
  */
 
 static void UpdateDrawFrame(void) {
+    Singleton &Global = Singleton::get();
 
     // siempre hay que reproducir la musica que esta actualmente
-    //UpdateMusicStream(music);
+    UpdateMusicStream(Global.music);
 
     // Verifico Entradas de eventos.
     if (IsKeyDown(KEY_RIGHT)) {
         //if (player->getCharacterPos().x > 600)
         //  map->setX(-3);
-        player->move_x(2.0f);
+        Global.player->move_x(2.0f);
 
     }
     if (IsKeyDown(KEY_LEFT)) {
         //if (player->getCharacterPos().x < 400)
         //map->setX(3);
-        player->move_x(-2.0f);
+        Global.player->move_x(-2.0f);
 
     }
     if (IsKeyDown(KEY_UP)) {
-        player->jump(1.0f);
+        Global.player->jump(1.0f);
     }
     if (IsKeyDown(KEY_DOWN)) {
-        player->move_y(2.0f);
+        Global.player->move_y(2.0f);
     }
 
 
@@ -97,16 +80,17 @@ static void UpdateDrawFrame(void) {
     BeginDrawing();
 
     ClearBackground(RAYWHITE); // Limpio la pantalla con blanco
-    DrawTexture(background, 0, 0, WHITE);
+    DrawTexture(Global.background, 0, 0, WHITE);
 
 
-    map->dibujar();
+    Global.map->dibujar();
 
     // Dibujo todos los elementos del juego.
 
-    player->draw();
+    Global.player->draw();
     //enemigo->draw();
 
+    //coins->draw();
     // Finalizo el dibujado
     EndDrawing();
 }

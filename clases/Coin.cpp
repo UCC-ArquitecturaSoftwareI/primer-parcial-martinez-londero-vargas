@@ -4,8 +4,7 @@
 
 #include "Coin.h"
 #include <string>
-#include <cmath>
-#include "Nave.h"
+
 
 Coin::Coin(std::string text, const Vector2 &coinPos) : coin_pos(coinPos) {
 

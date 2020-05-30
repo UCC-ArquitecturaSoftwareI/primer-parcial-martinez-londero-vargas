@@ -11,6 +11,7 @@ private:
     Texture2D coin;
     Vector2 coin_pos;
 public:
+
     Coin(std::string text, const Vector2 &coinPos);
 
     void draw();
