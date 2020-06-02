@@ -18,7 +18,7 @@ enum estado{
 class Enemy{
 private:
 
-    Animator *anim[1];
+    Animator *anim;
     Vector2 Enemy_pos;
     estado Estado;
 

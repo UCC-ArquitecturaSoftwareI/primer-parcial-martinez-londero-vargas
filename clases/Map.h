@@ -8,7 +8,7 @@
 #include "raylib.h"
 #include <string>
 #include "../libreria/tileson.hpp"
-#include <list>
+#include <vector>
 class Map
 {
     tson::Map map;
@@ -16,7 +16,9 @@ class Map
     int x=0;
     int y=0;
     tson::Tileset *map_tileset;
+
 public:
+    std::vector<Rectangle> pisos;
     Vector2 player_init_pos;
     Map(std:: string file);
     void setX(int x);

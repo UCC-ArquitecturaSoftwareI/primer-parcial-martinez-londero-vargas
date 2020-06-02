@@ -17,9 +17,9 @@ static void UpdateDrawFrame(void);          // Función dedicada a operar cada f
 
 int main() {
 
-    Singleton &Global = Singleton::get();
 
-    InitWindow(Global.screenWidth, Global.screenHeight, "CaMica");
+    InitWindow(Singleton::screenWidth, Singleton::screenHeight, "CaMica");
+    Singleton &Global = Singleton::get();
     InitAudioDevice();              // Initialize audio device
     float background_x = 0;
     float background_y = 0;
@@ -70,12 +70,20 @@ static void UpdateDrawFrame(void) {
 
     }
     if (IsKeyDown(KEY_UP)) {
-        Global.player->jump(1.0f);
+        Global.player->jump(-5.0f);
     }
     if (IsKeyDown(KEY_DOWN)) {
-        Global.player->move_y(2.0f);
     }
+    Global.player->move_y(0);
 
+
+    for (Rectangle piso: Global.map->pisos) {
+        if (CheckCollisionRecs(Global.player->getRectangle(), piso)) {
+            std::cout << "COLICIÓN" << std::endl;
+            Global.player->jump(0);
+        }
+
+    }
 
 
     // Comienzo a dibujar

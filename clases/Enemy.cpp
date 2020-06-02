@@ -6,13 +6,13 @@
 #include "Enemy.h"
 
 Enemy::Enemy(std::string text, const Vector2 &EnemyPos) : Enemy_pos(EnemyPos) {
-    anim[0]= new Animator(text, 53, 54, 8);
+    anim= new Animator(text, 53, 54, 8, 1);
 
 }
 
 void Enemy::draw() {
 
-    anim[0]->draw(Enemy_pos, mirar);
+    anim->draw(Enemy_pos, mirar, 0);
 }
 
 

@@ -12,16 +12,16 @@
 class Animator {
 private:
     Texture2D textura{};
-    int cant;
-    int img_act;
+    int columna, fila;
+    int columna_act;
 
     float alto, ancho;
 
     int tiempo;
 public:
-    Animator(const std::string tex_file, float alto, float ancho, int cant);
+    Animator(const std::string tex_file, float alto, float ancho, int columna, int fila);
 
-    void draw(Vector2 character_pos, int mirar);
+    void draw(Vector2 character_pos, int mirar, int fila);
 };
 
 #endif //RAYLIBTEMPLATE_ANIMATOR_H

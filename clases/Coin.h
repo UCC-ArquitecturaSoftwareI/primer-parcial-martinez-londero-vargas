@@ -15,7 +15,7 @@ private:
     Vector2 coin_pos;
     int width;
     int height;
-    Animator *anim[4];
+    Animator *anim;
     int mirar;
 public:
     Coin(std::string text, const Vector2 &coinPos);
