@@ -1,18 +1,27 @@
+//
+// Created by micav on 26/05/2020.
+//
+
 #include <raylib.h>
 #include <string>
 #include "Animator.h"
+#include <vector>
+
+//#include "Character.h"
 #ifndef RAYLIBTEMPLATE_ENEMY_H
 #define RAYLIBTEMPLATE_ENEMY_H
 enum estado{
     STOP,
     ADELANTE
-} ;
+};
 
-class Enemy {
-protected:
+class Enemy{
+private:
+
     Animator *anim[1];
     Vector2 Enemy_pos;
     estado Estado;
+
     int mirar;
 
 public:
@@ -20,9 +29,14 @@ public:
 
     Enemy(std::string text, const Vector2 &EnemyPos);
 
+    //Enemy *clone();
+
+
     void draw();
-    void move_x(float d);
-    void move_y(float d);
+    void moveEnemy();
+   // void removeEnemy (const Vector2 &EnemyPos);
+   // void move_x(float d);
+   // void move_y(float d);
 
 
 

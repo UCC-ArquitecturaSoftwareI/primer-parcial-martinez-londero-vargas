@@ -1,34 +1,40 @@
+//
+// Created by micav on 26/05/2020.
+//
+
 #include <string>
 #include "Enemy.h"
 
 Enemy::Enemy(std::string text, const Vector2 &EnemyPos) : Enemy_pos(EnemyPos) {
-    Estado = STOP;
-    mirar = 0;
-    anim[0] = new Animator(text, 512, 512, 8);
+    anim[0]= new Animator(text, 53, 54, 8);
 
 }
 
 void Enemy::draw() {
-    Estado = ADELANTE;
-    anim[0]->draw(Enemy_pos,mirar);
-}
 
-void Enemy::move_x(float d) {
-    if (d < 0) {
-        mirar = 1;
-    } else if (d > 0) {
-        mirar = 0;
-    }
-    Enemy_pos.x += d;
-    Estado = STOP;
-}
-
-void Enemy::move_y(float d) {
-    Enemy_pos.y += d;
-    Estado = STOP;
+    anim[0]->draw(Enemy_pos, mirar);
 }
 
 
 const Vector2 &Enemy::getEnemyPos() const {
     return Enemy_pos;
 }
+
+/*
+void Enemy::removeEnemy(Vector2 &EnemyPos) {
+    if (Enemy_pos.x < 2) {
+        draw()
+
+    }
+
+
+}*/
+
+void Enemy::moveEnemy(){
+    Enemy_pos.x=Enemy_pos.x - 1;
+
+}
+/*
+Enemy *Enemy::clone() {
+    return new Enemy();
+}*/

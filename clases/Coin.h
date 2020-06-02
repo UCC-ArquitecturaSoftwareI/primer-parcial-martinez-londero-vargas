@@ -1,17 +1,23 @@
 //
-// Created by Cami on 21/5/2020.
+// Created by micav on 26/05/2020.
 //
-#include "Animator.h"
+
 #ifndef RAYLIBTEMPLATE_COIN_H
 #define RAYLIBTEMPLATE_COIN_H
 
+#include <raylib.h>
+#include <string>
+#include "Animator.h"
 class Coin{
 
 private:
     Texture2D coin;
     Vector2 coin_pos;
+    int width;
+    int height;
+    Animator *anim[4];
+    int mirar;
 public:
-
     Coin(std::string text, const Vector2 &coinPos);
 
     void draw();

@@ -1,3 +1,6 @@
+//
+// Created by micav on 17/04/2020.
+//
 #include <string>
 #include "Character.h"
 
@@ -9,7 +12,7 @@ Character::Character(std::string text, const Vector2 &characterPos) : character_
     character_vel.y=0;
     anim[0] = new Animator(text, 57, 50, 7);
     anim[2] = new Animator("resources/idle.png", 50, 50, 1);
-    // anim[1] = new Animator("resources/shoot2.png", 57, 64, 7);
+   // anim[1] = new Animator("resources/shoot2.png", 57, 64, 7);
     anim[3] = new Animator("resources/jump2.png", 57, 50, 3);
 }
 
@@ -63,3 +66,4 @@ const Vector2 &Character::getCharacterVel() const {
 void Character::setCharacterVel(const Vector2 &characterVel) {
     character_vel = characterVel;
 }
+

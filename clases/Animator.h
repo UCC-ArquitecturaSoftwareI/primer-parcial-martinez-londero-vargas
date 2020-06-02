@@ -25,4 +25,3 @@ public:
 };
 
 #endif //RAYLIBTEMPLATE_ANIMATOR_H
-

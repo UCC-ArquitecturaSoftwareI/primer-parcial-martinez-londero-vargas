@@ -2,18 +2,26 @@
 
 #include "clases/Character.h"
 #include "clases/Map.h"
+#include "clases/Map.h"
 #include "clases/Enemy.h"
 #include "clases/Coin.h"
 #include "clases/Singleton.h"
 
 #if defined(PLATFORM_WEB) // Para crear HTML5
+
 #include <emscripten/emscripten.h>
 #endif
 
 
+const int screenWidth = 800;
+const int screenHeight = 450;
+
 static void UpdateDrawFrame(void);          // Función dedicada a operar cada frame
 
 int main() {
+
+
+
     // Inicialización de la
     int screenWidth = 800;
     int screenHeight = 450;
@@ -48,13 +56,16 @@ int main() {
  *  del juego.
  */
 
+
 static void UpdateDrawFrame(void) {
     Singleton &Global = Singleton::get();
 
     // siempre hay que reproducir la musica que esta actualmente
+    //UpdateMusicStream(music);
     UpdateMusicStream(Global.music);
 
     // Verifico Entradas de eventos.
+
     if (IsKeyDown(KEY_RIGHT)) {
         //if (player->getCharacterPos().x > 600)
         //  map->setX(-3);
@@ -82,10 +93,13 @@ static void UpdateDrawFrame(void) {
     ClearBackground(RAYWHITE); // Limpio la pantalla con blanco
     DrawTexture(Global.background, 0, 0, WHITE);
 
-
     Global.map->dibujar();
 
     // Dibujo todos los elementos del juego.
+
+
+
+    DrawText("Life:", 20, 20, 40, LIGHTGRAY);
 
     Global.player->draw();
     //enemigo->draw();

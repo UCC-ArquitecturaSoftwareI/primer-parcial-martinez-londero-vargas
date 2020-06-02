@@ -14,9 +14,9 @@ private:
     Singleton() {
 
         music = LoadMusicStream("resources/Cyberpunk Moonlight Sonata.mp3");
-        player = new Character("resources/Run.png", Vector2{screenWidth / 2, screenHeight - 80});
+        player = new Character("resources/Run.png", Vector2{static_cast<float>(screenWidth / 2.0), static_cast<float>(screenHeight - 80)});
         map = new Map("tiles.json");
-        enemigo = new Enemy("resources/Enemy.png", Vector2{screenWidth / 2, screenHeight - 180});
+        enemigo = new Enemy("resources/Enemy.png", Vector2{static_cast<float>(screenWidth / 2.0), static_cast<float>(screenHeight - 180)});
         //coins = new Coin("coin.png",Vector2{screenWidth / 2, screenHeight - 10});
         background = LoadTexture("resources/54147.png");
 
