@@ -13,19 +13,13 @@
 #endif
 
 
-const int screenWidth = 800;
-const int screenHeight = 450;
-
 static void UpdateDrawFrame(void);          // Función dedicada a operar cada frame
 
 int main() {
 
+    Singleton &Global = Singleton::get();
 
-
-    // Inicialización de la
-    int screenWidth = 800;
-    int screenHeight = 450;
-    InitWindow(screenWidth, screenHeight, "CaMica");
+    InitWindow(Global.screenWidth, Global.screenHeight, "CaMica");
     InitAudioDevice();              // Initialize audio device
     float background_x = 0;
     float background_y = 0;
@@ -40,9 +34,6 @@ int main() {
         UpdateDrawFrame();
     }
 #endif
-
-    Singleton &Global = Singleton::get();
-    // Descargar todos los resources cargados
 
     UnloadMusicStream(Global.music);   // Descargo la musica de RAM
     CloseWindow();
