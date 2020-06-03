@@ -7,39 +7,53 @@
 #ifndef RAYLIBTEMPLATE_CHARACTER_H
 #define RAYLIBTEMPLATE_CHARACTER_H
 
-enum char_estado{
+enum char_estado {
     QUIETO,
     CORRIENDO,
     DISPARANDO,
-    SALTANDO
-} ;
+    SALTANDO,
+    CALLENDO
+};
 
 class Character {
 protected:
-    Animator *anim[4];
+    Animator *anim;
     Vector2 character_pos;
     Vector2 character_vel;
-public:
-    const Vector2 &getCharacterVel() const;
-
-    void setCharacterVel(const Vector2 &characterVel);
-
-protected:
+    Vector2 size;
     char_estado estado;
     int mirar;
     bool canJump;
     int Life;
+
 public:
-    const Vector2 &getCharacterPos() const;
-    const Vector2 &getVel();
-
-
     Character(std::string text, const Vector2 &characterPos);
 
+    const Vector2 &getCharacterVel() const;
+
+    void setCharacterVel(const Vector2 &characterVel);
+
+    const Vector2 &getCharacterPos() const;
+
+    const Vector2 &getVel();
+
     void draw();
+
     void move_x(float d);
+
     void move_y(float d);
+
     void jump(float d);
 
+    Rectangle getRectangle(){
+        return {
+                character_pos.x,
+                character_pos.y,
+                size.x,
+                size.y
+        };
+    }
+
 };
+
 #endif //RAYLIBTEMPLATE_CHARACTER_H

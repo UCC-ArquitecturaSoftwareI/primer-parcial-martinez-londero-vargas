@@ -3,32 +3,32 @@
 //
 #include <string>
 #include "Character.h"
-
+#include <iostream>
 
 Character::Character(std::string text, const Vector2 &characterPos) : character_pos(characterPos) {
     estado = QUIETO;
     mirar = 0;
-    character_vel.x=0;
-    character_vel.y=0;
-    anim[0] = new Animator(text, 57, 50, 7);
-    anim[2] = new Animator("resources/idle.png", 50, 50, 1);
-   // anim[1] = new Animator("resources/shoot2.png", 57, 64, 7);
-    anim[3] = new Animator("resources/jump2.png", 57, 50, 3);
+    character_vel.x = 0;
+    character_vel.y = 0;
+    anim = new Animator(text, 57, 50, 9, 2);
+    size.x = 50;
+    size.y = 57;
+
 }
 
 void Character::draw() {
     switch (estado) {
         case CORRIENDO:
-            anim[0]->draw(character_pos, mirar);
+            anim->draw(character_pos, mirar, 0);
             break;
         case DISPARANDO:
-            anim[1]->draw(character_pos, mirar);
+            anim->draw(character_pos, mirar, 0);
             break;
         case QUIETO:
-            anim[2]->draw(character_pos, mirar);
+            anim->draw(character_pos, mirar, 0);
             break;
         case SALTANDO:
-            anim[3]->draw(character_pos,mirar);
+            anim->draw(character_pos, mirar, 1);
 
     }
 }
@@ -40,12 +40,26 @@ void Character::move_x(float d) {
         mirar = 0;
     }
     character_pos.x += d;
-    estado = CORRIENDO;
+    if (d == 0)
+        estado = QUIETO;
+    else
+        estado = CORRIENDO;
 }
 
 void Character::move_y(float d) {
-    character_pos.y += d;
+    //character_pos.y += d;
 
+    character_pos.y += character_vel.y; // mover el player
+
+    character_vel.y += 1;               // gravedad
+
+    if (character_pos.y < 450 - 57) {
+    } else {
+        character_pos.y = 450 - 57;
+    }
+
+
+    estado = SALTANDO;
 }
 
 
@@ -54,8 +68,7 @@ const Vector2 &Character::getCharacterPos() const {
 }
 
 void Character::jump(float d) {
-    character_pos.y -= d;
-    character_vel.y += d;
+    character_vel.y = d;
     estado = SALTANDO;
 }
 

@@ -3,7 +3,7 @@
 
 #include <string>
 
-Map::Map (std::string file) {
+Map::Map(std::string file) {
     tson::Tileson parser;
     map = parser.parse(fs::path("resources/Level/" + file));
     //dibujo =LoadTexture(img.c_str());
@@ -25,6 +25,17 @@ Map::Map (std::string file) {
             std::cout << "Nombre: " << obj.getName() << std::endl;
             std::cout << " Pos" << obj.getPosition().x << std::endl;
 
+        }
+
+        // Leo pisos
+        auto piso = map.getLayer("Piso");
+        for (auto &obj : piso->getObjects()) {
+            std::cout << "Nombre: " << obj.getName() << std::endl;
+            std::cout << "Plataforma?" << obj.get<bool>("plataforma") << std::endl;
+            pisos.push_back({static_cast<float>(obj.getPosition().x),
+                             static_cast<float>(obj.getPosition().y),
+                             static_cast<float>(obj.getSize().x),
+                             static_cast<float>(obj.getSize().y)});
         }
     }
 }
@@ -52,8 +63,8 @@ void Map::setY(int y) {
 
 void Map::dibujar() {
     Rectangle tile_rec;
-    tile_rec.x=0;
-    tile_rec.y=0;
+    tile_rec.x = 0;
+    tile_rec.y = 0;
     tile_rec.width = map.getTileSize().x;
     tile_rec.height = map.getTileSize().y;
 
@@ -62,34 +73,31 @@ void Map::dibujar() {
     int margin = map_tileset->getMargin();
     int space = map_tileset->getSpacing();
 
-    auto &c=map.getBackgroundColor();
-    ClearBackground({c.r,c.g,c.b,c.a});
+    auto &c = map.getBackgroundColor();
+    ClearBackground({c.r, c.g, c.b, c.a});
 
-    for (auto nombre: {"Fondo", "Frente1", "Frente2","Frente3"}) {
+    for (auto nombre: {"Fondo", "Frente1", "Frente2", "Frente3"}) {
         auto *layer = map.getLayer(nombre);
-        for (auto&[pos,tile]: layer->getTileData())
-        {
+        for (auto&[pos, tile]: layer->getTileData()) {
             if (tile != nullptr) {
-                tson::Vector2f position = {(float) std::get<0> (pos) * map.getTileSize().x,
-                                           (float)std::get<1>(pos)* map.getTileSize().y};
+                tson::Vector2f position = {(float) std::get<0>(pos) * map.getTileSize().x,
+                                           (float) std::get<1>(pos) * map.getTileSize().y};
                 int baseTilePosition = (tile->getId() - firstId);
 
-                int tileModX= (baseTilePosition % columns);
-                int currentRow = (baseTilePosition /columns);
+                int tileModX = (baseTilePosition % columns);
+                int currentRow = (baseTilePosition / columns);
                 int offsetX = tileModX * (map.getTileSize().x + space) + margin;
-                int offsetY = currentRow * (map.getTileSize().y +space +margin);
+                int offsetY = currentRow * (map.getTileSize().y + space + margin);
 
                 tile_rec.x = offsetX;
                 tile_rec.y = offsetY;
-                DrawTextureRec(map_text, tile_rec,{position.x, position.y}, WHITE);
+                DrawTextureRec(map_text, tile_rec, {position.x, position.y}, WHITE);
 
             }
         }
 
 
     }
-
-
 
 
 }
