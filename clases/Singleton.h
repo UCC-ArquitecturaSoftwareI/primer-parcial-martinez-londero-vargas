@@ -13,7 +13,7 @@ class Singleton {
 private:
     Singleton() {
 
-        music = LoadMusicStream("resources/Cyberpunk Moonlight Sonata.mp3");
+       // music = LoadMusicStream("resources/Cyberpunk Moonlight Sonata.mp3");
         player = new Character("resources/Character.png", Vector2{static_cast<float>(screenWidth / 2.0), static_cast<float>(screenHeight - 80)});
         map = new Map("tiles.json");
         enemigo = new Enemy("resources/Enemy.png", Vector2{static_cast<float>(screenWidth / 2.0), static_cast<float>(screenHeight - 180)});

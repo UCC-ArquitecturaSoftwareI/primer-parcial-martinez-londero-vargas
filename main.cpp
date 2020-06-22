@@ -53,7 +53,7 @@ static void UpdateDrawFrame(void) {
 
     // siempre hay que reproducir la musica que esta actualmente
     //UpdateMusicStream(music);
-    UpdateMusicStream(Global.music);
+   // UpdateMusicStream(Global.music);
 
     // Verifico Entradas de eventos.
 
@@ -79,7 +79,6 @@ static void UpdateDrawFrame(void) {
 
     for (Rectangle piso: Global.map->pisos) {
         if (CheckCollisionRecs(Global.player->getRectangle(), piso)) {
-            std::cout << "COLICIÓN" << std::endl;
             Global.player->jump(0);
         }
 
