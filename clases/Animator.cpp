@@ -26,3 +26,7 @@ void Animator::draw(Vector2 character_pos, int mirar, int fila) {
         }
     }
 }
+
+const Texture2D &Animator::getTextura() const {
+    return textura;
+}

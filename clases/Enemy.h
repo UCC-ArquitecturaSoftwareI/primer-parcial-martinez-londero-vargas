@@ -21,7 +21,6 @@ private:
     Animator *anim;
     Vector2 Enemy_pos;
     estado Estado;
-
     int mirar;
 
 public:
