@@ -11,21 +11,20 @@ void GameState::loop() {
 
     if (IsKeyDown(KEY_RIGHT)) {
         if (Global.player->getCharacterPos().x > 600)
-            Global.map->setX(-3);
+        { Global.map->setX(Global.map->getX()-3);}
         Global.player->move_x(2.0f);
 
     }
     if (IsKeyDown(KEY_LEFT)) {
         if (Global.player->getCharacterPos().x < 400)
-            Global.map->setX(3);
+        { Global.map->setX(Global.map->getX()+3);}
         Global.player->move_x(-2.0f);
 
     }
     if (IsKeyDown(KEY_UP)) {
         Global.player->jump(-5.0f);
     }
-    if (IsKeyDown(KEY_DOWN)) {
-    }
+
     Global.player->move_y(0);
 
 

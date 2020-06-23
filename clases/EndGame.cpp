@@ -6,16 +6,6 @@
 #include "Menu.h"
 
 
-void EndGame::draw() {
-    BeginDrawing();
-
-    ClearBackground(RAYWHITE);
-
-    DrawText(FormatText("END"), 200, 160, 40, BLUE);
-
-    EndDrawing();
-
-}
 
 EndGame::~EndGame() {
 
@@ -23,11 +13,13 @@ EndGame::~EndGame() {
 
 void EndGame::loop() {
 
+    Background = LoadTexture("resources/GameOver.png");
     if (IsKeyDown(KEY_M)) {
         ctx->cambiar_estado(new Menu);
     }
     BeginDrawing();
-    ClearBackground(RED);
-    DrawText("GAME OVER", 100, 100, 30, WHITE);
+    ClearBackground(WHITE);
+    DrawTexture(Background,0,0,WHITE);
+    DrawText("Press M to restart",270,370,20,WHITE);
     EndDrawing();
 }

@@ -8,6 +8,7 @@
 class Menu : public State {
 private:
     Texture2D Button;
+    Texture2D Background;
     Rectangle btnBounds;
     Vector2 mousePoint;
 public:

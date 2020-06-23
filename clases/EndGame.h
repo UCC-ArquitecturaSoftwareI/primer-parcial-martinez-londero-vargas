@@ -9,9 +9,8 @@
 
 class EndGame: public State{
 private:
-
+     Texture2D Background;
 public:
-    void draw();
 
     ~EndGame() override;
 
