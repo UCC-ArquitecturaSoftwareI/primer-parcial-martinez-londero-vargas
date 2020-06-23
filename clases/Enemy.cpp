@@ -7,7 +7,7 @@
 
 Enemy::Enemy(std::string text, const Vector2 &EnemyPos) : Enemy_pos(EnemyPos) {
     anim= new Animator(text, 53, 54, 8, 1);
-
+    size = {53,54};
 }
 
 void Enemy::draw() {
@@ -33,6 +33,15 @@ void Enemy::removeEnemy(Vector2 &EnemyPos) {
 void Enemy::moveEnemy(){
     Enemy_pos.x=Enemy_pos.x - 1;
 
+}
+
+Rectangle Enemy::getRectangle() {
+    return {
+            Enemy_pos.x,
+            Enemy_pos.y,
+            size.x,
+            size.y
+    };
 }
 /*
 Enemy *Enemy::clone() {

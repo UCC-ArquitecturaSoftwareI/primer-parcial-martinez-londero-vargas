@@ -3,7 +3,7 @@
 
 #include <string>
 
-Map::Map(std::string file) {
+Map::Map(std::string file, std::list<Enemy *> &enemigos) {
     tson::Tileson parser;
     map = parser.parse(fs::path("resources/Level/" + file));
     //dibujo =LoadTexture(img.c_str());
@@ -36,6 +36,23 @@ Map::Map(std::string file) {
                              static_cast<float>(obj.getPosition().y),
                              static_cast<float>(obj.getSize().x),
                              static_cast<float>(obj.getSize().y)});
+        }
+
+        //enemigo = new Enemy("resources/Enemy.png", Vector2{static_cast<float>(screenWidth / 2.0), static_cast<float>(screenHeight - 180)});
+        // Leo enemigos
+        auto enemigos_mapa = map.getLayer("Enemigos");
+        for (auto &obj : enemigos_mapa->getObjects()) {
+            switch (obj.get<int>("tipo")) {
+                case 0:
+                    enemigos.push_back(new Enemy("resources/Enemy.png",
+                                                 {static_cast<float>(obj.getPosition().x),
+                                                  static_cast<float>(obj.getPosition().y)}));
+                    break;
+                case 1:
+                    enemigos.push_back(new Enemy("resources/SuperEnemy.png",
+                                                 {static_cast<float>(obj.getPosition().x),
+                                                  static_cast<float>(obj.getPosition().y)}));
+            }
         }
     }
 }

@@ -5,11 +5,17 @@
 #ifndef RAYLIBTEMPLATE_ENDGAME_H
 #define RAYLIBTEMPLATE_ENDGAME_H
 
-class EndGame{
+#include "State.h"
+
+class EndGame: public State{
 private:
 
 public:
     void draw();
+
+    ~EndGame() override;
+
+    void loop() override;
 };
 
 #endif //RAYLIBTEMPLATE_ENDGAME_H

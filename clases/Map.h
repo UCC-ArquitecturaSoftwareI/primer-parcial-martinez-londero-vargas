@@ -7,7 +7,9 @@
 
 #include "raylib.h"
 #include <string>
+#include <list>
 #include "../libreria/tileson.hpp"
+#include "Enemy.h"
 #include <vector>
 class Map
 {
@@ -20,7 +22,7 @@ class Map
 public:
     std::vector<Rectangle> pisos;
     Vector2 player_init_pos;
-    Map(std:: string file);
+    Map(std:: string file, std::list<Enemy*> &enemigos);
     void setX(int x);
     int getX();
     void setY(int y);

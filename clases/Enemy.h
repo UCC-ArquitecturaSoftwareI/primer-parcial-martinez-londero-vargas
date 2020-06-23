@@ -20,6 +20,7 @@ private:
 
     Animator *anim;
     Vector2 Enemy_pos;
+    Vector2 size;
     estado Estado;
     int mirar;
 
@@ -39,5 +40,6 @@ public:
 
 
 
+    Rectangle getRectangle();
 };
 #endif //RAYLIBTEMPLATE_ENEMY_H

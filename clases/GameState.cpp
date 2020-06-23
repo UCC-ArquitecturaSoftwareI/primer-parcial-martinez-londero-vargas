@@ -1,29 +1,74 @@
 //
 // Created by Camila on 23/6/2020.
 //
-#include "../clases/GameState.h"
-#include "../clases/UpdateDrawFrame.cpp"
+#include "GameState.h"
+#include "Singleton.h"
+#include "EndGame.h"
 
-void GameState::initMenu() {
-   /* menu = new Menu();
-    menu->Update();
-    menu->Draw();*/
-}
+void GameState::loop() {
 
-void GameState::StartGame() {
-    UpdateDrawFrame();
-}
+    Singleton &Global = Singleton::get();
 
-void GameState::EndGame() {
-//    End->draw();
+    if (IsKeyDown(KEY_RIGHT)) {
+        if (Global.player->getCharacterPos().x > 600)
+            Global.map->setX(-3);
+        Global.player->move_x(2.0f);
 
-}
+    }
+    if (IsKeyDown(KEY_LEFT)) {
+        if (Global.player->getCharacterPos().x < 400)
+            Global.map->setX(3);
+        Global.player->move_x(-2.0f);
 
-void GameState::GameOver() {
+    }
+    if (IsKeyDown(KEY_UP)) {
+        Global.player->jump(-5.0f);
+    }
+    if (IsKeyDown(KEY_DOWN)) {
+    }
+    Global.player->move_y(0);
 
+
+    for (Rectangle piso: Global.map->pisos) {
+        if (CheckCollisionRecs(Global.player->getRectangle(), piso)) {
+            Global.player->jump(0);
+        }
+    }
+
+    for (Enemy *enemy: Global.enemigos) {
+        if (CheckCollisionRecs(Global.player->getRectangle(), enemy->getRectangle())) {
+            ctx->cambiar_estado(new EndGame);
+        }
+    }
+
+
+
+    // Comienzo a dibujar
+    BeginDrawing();
+
+
+    ClearBackground(RAYWHITE); // Limpio la pantalla con blanco
+    DrawTexture(Global.background, 0, 0, WHITE);
+
+    Global.map->dibujar();
+
+    // Dibujo todos los elementos del juego.
+
+    for (Enemy *enemy: Global.enemigos) {
+        enemy->draw();
+    }
+
+    Global.player->draw();
+    //enemigo->draw();
+
+    //coins->draw();
+    // Finalizo el dibujado
+    EndDrawing();
 }
 
 GameState::GameState() {
 
+    Singleton &Global = Singleton::get();
 
+    Global.player->setCharacterPos({20, 20});
 }

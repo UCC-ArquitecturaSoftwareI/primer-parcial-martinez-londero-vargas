@@ -80,3 +80,7 @@ void Character::setCharacterVel(const Vector2 &characterVel) {
     character_vel = characterVel;
 }
 
+void Character::setCharacterPos(const Vector2 &characterPos) {
+    character_pos = characterPos;
+}
+

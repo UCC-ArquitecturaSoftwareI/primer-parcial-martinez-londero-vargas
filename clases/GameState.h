@@ -5,25 +5,14 @@
 #ifndef RAYLIBTEMPLATE_GAMESTATE_H
 #define RAYLIBTEMPLATE_GAMESTATE_H
 
-#include "Menu.h"
-#include "EndGame.h"
-#include "Singleton.h"
+#include "State.h"
 
-class GameState{
-
-private:
-
-   //Menu *menu;
-   //EndGame *End;
+class GameState: public State{
+public:
+    GameState();
 
 public:
-
-    GameState();
-    void initMenu();
-    void StartGame();
-    void EndGame();
-    void GameOver();
-
+    void loop() override;
 };
 
 #endif //RAYLIBTEMPLATE_GAMESTATE_H

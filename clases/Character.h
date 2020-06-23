@@ -25,6 +25,8 @@ protected:
     int mirar;
     bool canJump;
     int Life;
+public:
+    void setCharacterPos(const Vector2 &characterPos);
 
 public:
     Character(std::string text, const Vector2 &characterPos);

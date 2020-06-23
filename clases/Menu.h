@@ -1,30 +1,23 @@
-/*#ifndef RAYLIBTEMPLATE_MENU_H
+#ifndef RAYLIBTEMPLATE_MENU_H
 #define RAYLIBTEMPLATE_MENU_H
 
-#include <raylib.h>*/
+#include <raylib.h>
+#include "State.h"
 
 
-
-/*
-class Menu {
+class Menu : public State {
 private:
     Texture2D Button;
-    int frameHeight;
-    Rectangle sourceRec;
     Rectangle btnBounds;
-    int btnState = 0;
-    bool btnAction = false;
     Vector2 mousePoint;
-
-
 public:
-    Menu ();
-    void Draw();
-    void Update();
+    Menu();
 
+    ~Menu() override;
+
+    void loop() override;
 };
 
 
 #endif //RAYLIBTEMPLATE_MENU_H
 
-*/
