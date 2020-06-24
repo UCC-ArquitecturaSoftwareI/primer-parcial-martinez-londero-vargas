@@ -1,6 +1,7 @@
 //
 // Created by Camila on 23/6/2020.
 //
+#include <z3.h>
 #include "GameState.h"
 #include "Singleton.h"
 #include "EndGame.h"
@@ -40,6 +41,12 @@ void GameState::loop() {
         }
     }
 
+    for (Coin *coin: Global.monedas) {
+        if (CheckCollisionRecs(Global.player->getRectangle(), coin->getRectangle())) {
+            
+        }
+    }
+
 
 
     // Comienzo a dibujar
@@ -57,10 +64,13 @@ void GameState::loop() {
         enemy->draw();
     }
 
-    Global.player->draw();
-    //enemigo->draw();
+    for (Coin *coins: Global.monedas) {
+        coins->draw();
+    }
 
-    //coins->draw();
+    Global.player->draw();
+
+
     // Finalizo el dibujado
     EndDrawing();
 }

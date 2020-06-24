@@ -17,10 +17,12 @@ private:
     int height;
     Animator *anim;
     int mirar;
+    Vector2 size;
 public:
     Coin(std::string text, const Vector2 &coinPos);
-
+    Rectangle getRectangle();
     void draw();
+    virtual ~Coin();
 
 };
 #endif //RAYLIBTEMPLATE_COIN_H

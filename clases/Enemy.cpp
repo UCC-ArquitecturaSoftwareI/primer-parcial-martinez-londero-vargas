@@ -20,16 +20,6 @@ const Vector2 &Enemy::getEnemyPos() const {
     return Enemy_pos;
 }
 
-/*
-void Enemy::removeEnemy(Vector2 &EnemyPos) {
-    if (Enemy_pos.x < 2) {
-        draw()
-
-    }
-
-
-}*/
-
 void Enemy::moveEnemy(){
     Enemy_pos.x=Enemy_pos.x - 1;
 
@@ -43,7 +33,3 @@ Rectangle Enemy::getRectangle() {
             size.y
     };
 }
-/*
-Enemy *Enemy::clone() {
-    return new Enemy();
-}*/

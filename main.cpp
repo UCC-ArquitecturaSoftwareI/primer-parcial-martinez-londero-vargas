@@ -10,7 +10,7 @@
 
 
 int main() {
-    InitWindow(Singleton::screenWidth, Singleton::screenHeight, "CaMica");
+    InitWindow(Singleton::screenWidth, Singleton::screenHeight, "CityScape");
 
     Context ctx(new Menu());
 

@@ -16,7 +16,7 @@ private:
 
        // music = LoadMusicStream("resources/Cyberpunk Moonlight Sonata.mp3");
         player = new Character("resources/Character.png", Vector2{static_cast<float>(screenWidth / 2.0), static_cast<float>(screenHeight - 80)});
-        map = new Map("tiles.json", enemigos);
+        map = new Map("tiles.json", enemigos,monedas);
         //enemigo = new Enemy("resources/Enemy.png", Vector2{static_cast<float>(screenWidth / 2.0), static_cast<float>(screenHeight - 180)});
         //coins = new Coin("coin.png",Vector2{screenWidth / 2, screenHeight - 10});
         background = LoadTexture("resources/54147.png");
@@ -33,7 +33,9 @@ public:
     Map *map;
     Texture2D background;
     std::list<Enemy*> enemigos;
-    Coin *coins;
+    std::list<Coin*> monedas;
+   // Coin *coins;
+
     static const int screenWidth = 800;
     static const int screenHeight = 450;
 

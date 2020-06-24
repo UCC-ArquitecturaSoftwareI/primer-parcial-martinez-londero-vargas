@@ -29,16 +29,8 @@ public:
 
     Enemy(std::string text, const Vector2 &EnemyPos);
 
-    //Enemy *clone();
-
-
     void draw();
     void moveEnemy();
-   // void removeEnemy (const Vector2 &EnemyPos);
-   // void move_x(float d);
-   // void move_y(float d);
-
-
 
     Rectangle getRectangle();
 };
