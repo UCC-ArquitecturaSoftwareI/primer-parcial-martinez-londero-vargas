@@ -1,6 +1,6 @@
 #include <raylib.h>
 #include "clases/Singleton.h"
-#include "clases/GameState.h"
+#include "clases/Game.h"
 #include "clases/Context.h"
 #include "clases/Menu.h"
 

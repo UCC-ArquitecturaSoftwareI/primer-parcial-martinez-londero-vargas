@@ -14,7 +14,6 @@ Map::Map(std::string file, std::list<Enemy *> &enemigos,std::list<Coin *> &moned
             map_tileset = &tileset;
         }
 
-
         auto objs = map.getLayer("Player");
         tson::Object *player = objs->firstObj("player");
         player_init_pos.x = player->getPosition().x;
@@ -26,6 +25,10 @@ Map::Map(std::string file, std::list<Enemy *> &enemigos,std::list<Coin *> &moned
             std::cout << " Pos" << obj.getPosition().x << std::endl;
 
         }
+
+        auto llegada = map.getLayer("win");
+        tson::Object *win = objs->firstObj("win");
+
 
         // Leo pisos
         auto piso = map.getLayer("Piso");

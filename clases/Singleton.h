@@ -6,6 +6,7 @@
 #include "Coin.h"
 #include "Map.h"
 #include "Enemy.h"
+#include "Win.h"
 
 #ifndef RAYLIBTEMPLATE_SINGLETON_H
 #define RAYLIBTEMPLATE_SINGLETON_H
@@ -34,7 +35,7 @@ public:
     Texture2D background;
     std::list<Enemy*> enemigos;
     std::list<Coin*> monedas;
-   // Coin *coins;
+    Win winner;
 
     static const int screenWidth = 800;
     static const int screenHeight = 450;

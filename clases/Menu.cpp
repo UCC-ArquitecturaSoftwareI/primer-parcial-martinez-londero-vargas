@@ -4,7 +4,7 @@
 
 #include "Menu.h"
 #include "Singleton.h"
-#include "GameState.h"
+#include "Game.h"
 
 
 Menu::Menu() {
@@ -23,7 +23,7 @@ void Menu::loop() {
     if (CheckCollisionPointRec(mousePoint, btnBounds) &&
         IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
 
-        ctx->cambiar_estado(new GameState);
+        ctx->cambiar_estado(new Game);
         return;
     }
     BeginDrawing();

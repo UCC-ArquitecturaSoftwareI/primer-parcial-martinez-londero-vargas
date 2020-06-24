@@ -11,6 +11,7 @@
 #include "../libreria/tileson.hpp"
 #include "Enemy.h"
 #include "Coin.h"
+#include "Win.h"
 #include <vector>
 class Map
 {
@@ -22,6 +23,7 @@ class Map
 
 public:
     std::vector<Rectangle> pisos;
+    std::vector<Rectangle> llegada;
     Vector2 player_init_pos;
     Map(std:: string file, std::list<Enemy*> &enemigos,std::list<Coin*> &monedas);
     void setX(int x);
