@@ -3,6 +3,7 @@
 //
 #include <string>
 #include "Character.h"
+#include "Singleton.h"
 #include <iostream>
 
 Character::Character(std::string text, const Vector2 &characterPos) : character_pos(characterPos) {

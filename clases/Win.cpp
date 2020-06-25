@@ -22,6 +22,6 @@ void Win::loop() {
     BeginDrawing();
     ClearBackground(WHITE);
     DrawTexture(Background,0,0,WHITE);
-    DrawText("Press M to restart",270,370,20,WHITE);
+    DrawText("Press M to restart",270,370,20,PURPLE);
     EndDrawing();
 }

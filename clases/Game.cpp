@@ -5,14 +5,17 @@
 #include "Game.h"
 #include "Singleton.h"
 #include "GameOver.h"
+#include "Coin_Strategy.h"
+#include "Strategy_Context.h"
 
 Camera2D camera = {0};
-
+Strategy_Context context;
+int puntaje = 0;
 void Game::loop() {
 
     Singleton &Global = Singleton::get();
     camera.target = {Global.player->getCharacterPos().x, Global.player->getCharacterPos().y };
-    camera.offset = (Vector2){static_cast<float>(Global.screenWidth/2), static_cast<float>(Global.screenHeight/2)};
+    camera.offset = (Vector2){0, static_cast<float>(Global.screenHeight/2)};
     camera.rotation = 0.0f;
     camera.zoom = 1.0f;
 
@@ -48,14 +51,17 @@ void Game::loop() {
 
     for (Enemy *enemy: Global.enemigos) {
         if (CheckCollisionRecs(Global.player->getRectangle(), enemy->getRectangle())) {
-           // ctx->cambiar_estado(new GameOver);
+            //ctx->cambiar_estado(new GameOver);
         }
     }
 
     for (Coin *coin: Global.monedas) {
         if (CheckCollisionRecs(Global.player->getRectangle(), coin->getRectangle())) {
-           // puntaje +=2;
-           // Global.map->removeCoin(Global.monedas);
+
+            context.SetStrategy(new Coin_Strategy);
+            puntaje = context.executeStrategy(puntaje);
+
+           // Global.map->removeCoin(Global.monedas); como remover
 
         }
     }
@@ -65,15 +71,17 @@ void Game::loop() {
      // Limpio la pantalla con blanco
 
     DrawTexture(Global.background, 0, 0, WHITE);
+    //DrawText(FormatText("Score: %08i", puntaje), 20, 20, 20, WHITE);
 
     BeginMode2D(camera); {
-        ClearBackground(BLUE);
-        //DrawText(FormatText("Score: %08i", //puntaje), 20, 20, 20, WHITE);
+        ClearBackground(WHITE);
+        DrawText(FormatText("Score: %08i", puntaje), 20, 20, 20, WHITE);
+
         Global.map->dibujar();
         Global.player->draw();
-       /* for (Enemy *enemy: Global.enemigos) {
+        for (Enemy *enemy: Global.enemigos) {
             enemy->draw();
-        }*/
+        }
 
         for (Coin *coins: Global.monedas) {
             coins->draw();

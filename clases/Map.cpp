@@ -25,10 +25,17 @@ Map::Map(std::string file, std::list<Enemy *> &enemigos,std::list<Coin *> &moned
             std::cout << " Pos" << obj.getPosition().x << std::endl;
 
         }
+//
+        auto llegadas = map.getLayer("win");
+        for (auto &obj : llegadas->getObjects()) {
+            llegada.push_back({static_cast<float>(obj.getPosition().x),
+                                 static_cast<float>(obj.getPosition().y),
+                                 static_cast<float>(obj.getSize().x),
+                                 static_cast<float>(obj.getSize().y)});
+            }
 
-        auto llegada = map.getLayer("win");
-        tson::Object *win = objs->firstObj("win");
 
+///
 
         // Leo pisos
         auto piso = map.getLayer("Piso");
