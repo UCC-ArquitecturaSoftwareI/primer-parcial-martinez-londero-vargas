@@ -1,7 +1,7 @@
 //
 // Created by Camila on 23/6/2020.
 //
-#include <z3.h>
+
 #include "Game.h"
 #include "Singleton.h"
 #include "GameOver.h"
