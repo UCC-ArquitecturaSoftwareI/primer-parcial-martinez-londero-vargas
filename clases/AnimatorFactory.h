@@ -1,26 +1,29 @@
 //
 // Created by Camila on 25/6/2020.
 //
-/*
+
 #ifndef RAYLIBTEMPLATE_ANIMATORFACTORY_H
 #define RAYLIBTEMPLATE_ANIMATORFACTORY_H
-#include <map>
+
+#include <unordered_map>
 #include "Animator.h"
-class AnimatorFactory{
+
+class TextureFactory {
 public:
-    AnimatorFactory() {};
+    TextureFactory() {};
 
 public:
-    map<int, std::string> pool;
+    std::unordered_map <string, Texture2D> pool;
 
-    Animator getAnimator(int id_textura,float alto, float ancho,int columna, int fila){
+    Texture2D getTexture(string file) {
         auto textura = pool.find(id_textura);
-        return Animator( &textura->second , alto, ancho,columna, fila );
-    }
+        if (textura != std::unordered_map::end) {
+            return &textura->second;
+        }
 
-    void addTexture(int id, std::string tx){
-        pool.insert((id,tx));
+        pool.emplace(file, Texture2D(file));
+        return getTexture(file);
     }
 };
+
 #endif //RAYLIBTEMPLATE_ANIMATORFACTORY_H
-*/

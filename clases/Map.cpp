@@ -106,7 +106,7 @@ void Map::dibujar() {
     int space = map_tileset->getSpacing();
 
     auto &c = map.getBackgroundColor();
-    ClearBackground({c.r, c.g, c.b, c.a});
+    //ClearBackground({c.r, c.g, c.b, c.a});
 
     for (auto nombre: {"Fondo", "Frente1", "Frente2", "Frente3"}) {
         auto *layer = map.getLayer(nombre);

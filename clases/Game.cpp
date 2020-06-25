@@ -14,10 +14,6 @@ int puntaje = 0;
 void Game::loop() {
 
     Singleton &Global = Singleton::get();
-    camera.target = {Global.player->getCharacterPos().x, Global.player->getCharacterPos().y };
-    camera.offset = (Vector2){0, static_cast<float>(Global.screenHeight/2)};
-    camera.rotation = 0.0f;
-    camera.zoom = 1.0f;
 
     if (IsKeyDown(KEY_RIGHT)) {
         Global.player->move_x(2.0f);
@@ -55,27 +51,38 @@ void Game::loop() {
         }
     }
 
+    Coin *aBorrar = nullptr;
     for (Coin *coin: Global.monedas) {
         if (CheckCollisionRecs(Global.player->getRectangle(), coin->getRectangle())) {
+            Coin *temp = coin;
 
             context.SetStrategy(new Coin_Strategy);
             puntaje = context.executeStrategy(puntaje);
 
-           // Global.map->removeCoin(Global.monedas); como remover
+            aBorrar = coin;
+           //Global.map->removeCoin(Global.monedas); como remover
 
         }
     }
+    if(aBorrar != nullptr){
+        Global.monedas.remove(aBorrar);
+        delete aBorrar;
+    }
+    camera.target = {Global.player->getCharacterPos().x, Global.player->getCharacterPos().y };
+    camera.offset = (Vector2){0, static_cast<float>(Global.screenHeight/2)};
+    camera.rotation = 0.0f;
+    camera.zoom = 1.0f;
 
     // Comienzo a dibujar
     BeginDrawing();
      // Limpio la pantalla con blanco
 
+    ClearBackground(WHITE);
     DrawTexture(Global.background, 0, 0, WHITE);
-    //DrawText(FormatText("Score: %08i", puntaje), 20, 20, 20, WHITE);
+    DrawText(FormatText("Score: %08i", puntaje), 20, 20, 20, WHITE);
 
     BeginMode2D(camera); {
-        ClearBackground(WHITE);
-        DrawText(FormatText("Score: %08i", puntaje), 20, 20, 20, WHITE);
+        //DrawText(FormatText("Score: %08i", puntaje), 20, 20, 20, WHITE);
 
         Global.map->dibujar();
         Global.player->draw();
