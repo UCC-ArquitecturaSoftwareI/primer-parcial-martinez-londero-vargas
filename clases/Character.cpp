@@ -22,9 +22,6 @@ void Character::draw() {
         case CORRIENDO:
             anim->draw(character_pos, mirar, 0);
             break;
-        case DISPARANDO:
-            anim->draw(character_pos, mirar, 0);
-            break;
         case QUIETO:
             anim->draw(character_pos, mirar, 0);
             break;
