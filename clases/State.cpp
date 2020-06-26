@@ -1,6 +1,3 @@
-//
-// Created by martin on 23/6/20.
-//
 
 #include "State.h"
 

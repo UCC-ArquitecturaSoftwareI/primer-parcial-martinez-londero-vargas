@@ -1,6 +1,3 @@
-//
-// Created by Camila on 23/6/2020.
-//
 
 #include "Game.h"
 #include "Singleton.h"
@@ -11,19 +8,20 @@
 Camera2D camera = {0};
 Strategy_Context context;
 int puntaje = 0;
+
 void Game::loop() {
 
     Singleton &Global = Singleton::get();
 
     if (IsKeyDown(KEY_RIGHT)) {
         Global.player->move_x(2.0f);
-        if (Global.player->getCharacterPos().x > camera.target.x+200)
-            camera.target.x = Global.player->getCharacterPos().x -200;
+        if (Global.player->getCharacterPos().x > camera.target.x + 200)
+            camera.target.x = Global.player->getCharacterPos().x - 200;
     }
     if (IsKeyDown(KEY_LEFT)) {
         Global.player->move_x(-2.0f);
-        if (Global.player->getCharacterPos().x > camera.target.x-200)
-            camera.target.x = Global.player->getCharacterPos().x +200;
+        if (Global.player->getCharacterPos().x > camera.target.x - 200)
+            camera.target.x = Global.player->getCharacterPos().x + 200;
 
     }
     if (IsKeyDown(KEY_UP)) {
@@ -47,7 +45,7 @@ void Game::loop() {
 
     for (Enemy *enemy: Global.enemigos) {
         if (CheckCollisionRecs(Global.player->getRectangle(), enemy->getRectangle())) {
-            //ctx->cambiar_estado(new GameOver);
+            ctx->cambiar_estado(new GameOver);
         }
     }
 
@@ -60,29 +58,29 @@ void Game::loop() {
             puntaje = context.executeStrategy(puntaje);
 
             aBorrar = coin;
-           //Global.map->removeCoin(Global.monedas); como remover
+
 
         }
     }
-    if(aBorrar != nullptr){
+    if (aBorrar != nullptr) {
         Global.monedas.remove(aBorrar);
         delete aBorrar;
     }
-    camera.target = {Global.player->getCharacterPos().x, Global.player->getCharacterPos().y };
-    camera.offset = (Vector2){0, static_cast<float>(Global.screenHeight/2)};
+    camera.target = {Global.player->getCharacterPos().x, Global.player->getCharacterPos().y};
+    camera.offset = (Vector2) {0, static_cast<float>(Global.screenHeight / 2)};
     camera.rotation = 0.0f;
     camera.zoom = 1.0f;
 
-    // Comienzo a dibujar
+
     BeginDrawing();
-     // Limpio la pantalla con blanco
+
 
     ClearBackground(WHITE);
     DrawTexture(Global.background, 0, 0, WHITE);
     DrawText(FormatText("Score: %08i", puntaje), 20, 20, 20, WHITE);
 
-    BeginMode2D(camera); {
-        //DrawText(FormatText("Score: %08i", puntaje), 20, 20, 20, WHITE);
+    BeginMode2D(camera);
+    {
 
         Global.map->dibujar();
         Global.player->draw();
@@ -93,14 +91,14 @@ void Game::loop() {
         for (Coin *coins: Global.monedas) {
             coins->draw();
         }
+
+      for (BadCoin *badcoins: Global.badcoins) {
+            badcoins->draw();
+        }
     }
 
     EndMode2D();
 
-    // Dibujo todos los elementos del juego.
-
-
-    // Finalizo el dibujado
     EndDrawing();
 }
 

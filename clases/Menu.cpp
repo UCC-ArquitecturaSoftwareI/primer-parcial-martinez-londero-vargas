@@ -1,6 +1,4 @@
-//
-// Created by Camila on 22/6/2020.
-//
+
 
 #include "Menu.h"
 #include "Singleton.h"

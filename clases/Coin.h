@@ -10,7 +10,7 @@
 #include "Animator.h"
 class Coin{
 
-private:
+protected:
     Texture2D coin;
     Vector2 coin_pos;
     int width;
@@ -20,8 +20,10 @@ private:
     Vector2 size;
 public:
     Coin(std::string text, const Vector2 &coinPos);
+    Coin();
+
     Rectangle getRectangle();
-    void draw();
+    virtual void draw();
     virtual ~Coin();
 
 };

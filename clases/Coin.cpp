@@ -29,3 +29,5 @@ Rectangle Coin::getRectangle() {
 Coin::~Coin() {
     UnloadTexture(coin);
 }
+
+Coin::Coin() {}

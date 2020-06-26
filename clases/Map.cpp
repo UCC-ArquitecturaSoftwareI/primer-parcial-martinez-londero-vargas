@@ -3,7 +3,7 @@
 
 #include <string>
 
-Map::Map(std::string file, std::list<Enemy *> &enemigos,std::list<Coin *> &monedas) {
+Map::Map(std::string file, std::list<Enemy *> &enemigos,std::list<Coin *> &monedas,std::list<BadCoin*> badcoins) {
     tson::Tileson parser;
     map = parser.parse(fs::path("resources/Level/" + file));
     //dibujo =LoadTexture(img.c_str());
@@ -29,13 +29,13 @@ Map::Map(std::string file, std::list<Enemy *> &enemigos,std::list<Coin *> &moned
         auto llegadas = map.getLayer("win");
         for (auto &obj : llegadas->getObjects()) {
             llegada.push_back({static_cast<float>(obj.getPosition().x),
-                                 static_cast<float>(obj.getPosition().y),
-                                 static_cast<float>(obj.getSize().x),
-                                 static_cast<float>(obj.getSize().y)});
-            }
+                               static_cast<float>(obj.getPosition().y),
+                               static_cast<float>(obj.getSize().x),
+                               static_cast<float>(obj.getSize().y)});
+        }
 
 
-///
+
 
         // Leo pisos
         auto piso = map.getLayer("Piso");
@@ -52,27 +52,31 @@ Map::Map(std::string file, std::list<Enemy *> &enemigos,std::list<Coin *> &moned
         // Leo enemigos
         auto enemigos_mapa = map.getLayer("Enemigos");
         for (auto &obj : enemigos_mapa->getObjects()) {
-            switch (obj.get<int>("tipo")) {
-                case 0:
-                    enemigos.push_back(new Enemy("resources/Enemy.png",
-                                                 {static_cast<float>(obj.getPosition().x),
-                                                  static_cast<float>(obj.getPosition().y)}));
-                    break;
-                case 1:
-                    enemigos.push_back(new Enemy("resources/SuperEnemy.png",
-                                                 {static_cast<float>(obj.getPosition().x),
-                                                  static_cast<float>(obj.getPosition().y)}));
-            }
+            enemigos.push_back(new Enemy("resources/Enemy.png",
+                                         {static_cast<float>(obj.getPosition().x),
+                                          static_cast<float>(obj.getPosition().y)}));
+
         }
-       // coins = new Coin("coin.png",Vector2{screenWidth / 2, screenHeight - 10});
+        // coins = new Coin("coin.png",Vector2{screenWidth / 2, screenHeight - 10});
         auto monedas_mapa = map.getLayer("Monedas");
         for (auto &obj : monedas_mapa->getObjects()) {
+
                     monedas.push_back(new Coin("resources/coin.png",
-                                                 {static_cast<float>(obj.getPosition().x),
-                                                  static_cast<float>(obj.getPosition().y)}));
+                                               {static_cast<float>(obj.getPosition().x),
+                                                static_cast<float>(obj.getPosition().y)}));
+
             }
+
+        auto Badcoin_mapa = map.getLayer("Badcoin");
+        for (auto &obj : Badcoin_mapa->getObjects()) {
+            badcoins.push_back(new BadCoin("resources/coin.png",
+                                           {static_cast<float>(obj.getPosition().x),
+                                            static_cast<float>(obj.getPosition().y)}));}
         }
-    }
+
+        }
+
+
 
 
 
@@ -81,17 +85,12 @@ int Map::getX() {
     return x;
 }
 
-void Map::setX(int x) {
-    Map::x += x;
-}
 
 int Map::getY() {
     return y;
 }
 
-void Map::setY(int y) {
-    Map::y += y;
-}
+
 
 void Map::dibujar() {
     Rectangle tile_rec;
@@ -130,6 +129,7 @@ void Map::dibujar() {
 
 
     }
-
-
 }
+
+
+

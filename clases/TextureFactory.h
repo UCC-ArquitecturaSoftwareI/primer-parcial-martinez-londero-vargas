@@ -1,7 +1,11 @@
-//
-// Created by Camila on 25/6/2020.
-//
 
+/**
+* @file TextureFactory.h
+* @Author Camila Londero
+* @Author Micaela Vargas
+* @date 26/06/2020
+* @brief Implementacion del patron flyweight
+*/
 #ifndef RAYLIBTEMPLATE_TEXTUREFACTORY_H
 #define RAYLIBTEMPLATE_TEXTUREFACTORY_H
 
@@ -12,22 +16,30 @@
 
 
 class TextureFactory {
-public:
 
+public:
+    std::unordered_map<std::string, Texture2D> pool;
+/**
+* @brief Constructor de la clase
+* @return Objeto del tipo TextureFactory
+*/
     TextureFactory() {};
 
-    std::unordered_map <std::string, Texture2D> pool;
-
+/**
+* @brief Carga y busca las texturas en una tabla hash ordenada
+* @param string file
+* @return Textura2D
+*/
     Texture2D getTexture(std::string file) {
         auto textura = pool.find(file);
 
-        if (textura != std::unordered_map::end()  ) {
+        if (textura != pool.end()) {
             return textura->second;
         }
 
-        pool.emplace(file, Texture2D(file));
-        return getTexture(file);
-    }
+        pool.emplace(file, LoadTexture(file.c_str()));
+        return getTexture(file);}
+
 };
 
 #endif //RAYLIBTEMPLATE_TEXTUREFACTORY_H

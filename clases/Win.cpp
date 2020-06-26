@@ -1,12 +1,7 @@
-//
-// Created by Camila on 24/6/2020.
-//
-
 
 #include "raylib.h"
 #include "Win.h"
 #include "Menu.h"
-
 
 
 Win::~Win() {
@@ -21,7 +16,7 @@ void Win::loop() {
     }
     BeginDrawing();
     ClearBackground(WHITE);
-    DrawTexture(Background,0,0,WHITE);
-    DrawText("Press M to restart",270,370,20,PURPLE);
+    DrawTexture(Background, 0, 0, WHITE);
+    DrawText("Press M to restart", 270, 370, 20, PURPLE);
     EndDrawing();
 }
