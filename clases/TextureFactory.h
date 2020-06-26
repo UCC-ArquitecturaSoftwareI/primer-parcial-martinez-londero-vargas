@@ -1,7 +1,7 @@
 //
 // Created by Camila on 25/6/2020.
 //
-
+/*
 #ifndef RAYLIBTEMPLATE_TEXTUREFACTORY_H
 #define RAYLIBTEMPLATE_TEXTUREFACTORY_H
 
@@ -31,3 +31,4 @@ public:
 };
 
 #endif //RAYLIBTEMPLATE_TEXTUREFACTORY_H
+*/
