@@ -1,6 +1,9 @@
-//
-// Created by micav on 26/05/2020.
-//
+/**
+* @file Enemy.cpp
+* @Autor Micaela Vargas
+* @Autor Camila Londero
+* @date 26/06/2020
+*/
 
 #include <string>
 #include "Enemy.h"

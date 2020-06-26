@@ -1,7 +1,9 @@
-//
-// Created by mateo on 25/06/2020.
-//
-
+/**
+* @file Strategy_Context.cpp
+* @Autor Micaela Vargas
+* @Autor Camila Londero
+* @date 26/06/2020
+*/
 #include "Strategy_Context.h"
 
 void Strategy_Context::SetStrategy (Score_Strategy * score_s)

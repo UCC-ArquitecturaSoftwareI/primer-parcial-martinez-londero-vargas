@@ -1,6 +1,10 @@
-//
-// Created by mica on 25/06/2020.
-//
+/**
+* @file Strategy_Contex.h
+* @Autor Micaela Vargas
+* @Autor Camila Londero
+* @date 26/06/2020
+* @brief implementacion del contexto para Strategy
+*/
 
 #include "Score_Strategy.h"
 #ifndef RAYLIBTEMPLATE_STRATEGY_CONTEXT_H
@@ -8,10 +12,20 @@
 class Strategy_Context {
 
 private:
+/**
+* @brief puntero que apunta a un strategy
+*/
     Score_Strategy *score_strategy;
 
 public:
-    void SetStrategy (Score_Strategy * score_s);
+/**
+* @brief setea el strategy correcto
+*/
+
+    void SetStrategy (Score_Strategy * score_s)
+/**
+* @brief ejecuta la funcion correspondiente a cada strategy
+*/
 
     int executeStrategy (int puntos);
 };

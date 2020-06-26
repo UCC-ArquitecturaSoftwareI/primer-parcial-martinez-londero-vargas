@@ -1,6 +1,10 @@
-//
-// Created by micav on 26/05/2020.
-//
+/**
+* @file Enemy.h
+* @Autor Micaela Vargas
+* @Autor Camila Londero
+* @date 26/06/2020
+* @brief implementacion de la clase Enemy
+*/
 
 #include <raylib.h>
 #include <string>
@@ -25,13 +29,28 @@ private:
     int mirar;
 
 public:
+/**
+* @brief Vector que devuelve la posicion del enemigo
+* @return posicion del enemigo
+*/
     const Vector2 &getEnemyPos() const;
-
+/**
+* @brief Constructor de la clase
+* @param recibe una textura y la posicion
+*/
     Enemy(std::string text, const Vector2 &EnemyPos);
-
+/**
+* @brief funcion que dibuja al enemigo
+*/
     void draw();
+/**
+* @param
+*/
     void moveEnemy();
-
+/**
+* @brief funcion que encierra al enemigo en un rectangulo
+* @return posicion del rectangulo
+*/
     Rectangle getRectangle();
 };
 #endif //RAYLIBTEMPLATE_ENEMY_H

@@ -1,7 +1,9 @@
-//
-// Created by micav on 26/05/2020.
-//
-
+/**
+* @file Coin.h
+* @Autor Micaela Vargas
+* @Autor Camila Londero
+* @date 26/06/2020
+*/
 #include "Coin.h"
 #include <string>
 #include <cmath>

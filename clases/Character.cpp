@@ -70,13 +70,6 @@ void Character::jump(float d) {
     estado = SALTANDO;
 }
 
-const Vector2 &Character::getCharacterVel() const {
-    return character_vel;
-}
-
-void Character::setCharacterVel(const Vector2 &characterVel) {
-    character_vel = characterVel;
-}
 
 void Character::setCharacterPos(const Vector2 &characterPos) {
     character_pos = characterPos;

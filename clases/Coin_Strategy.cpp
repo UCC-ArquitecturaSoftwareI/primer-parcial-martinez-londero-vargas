@@ -1,6 +1,10 @@
-//
-// Created by mica on 25/06/2020.
-//
+/**
+* @file Coin_Strategy.cpp
+* @Autor Micaela Vargas
+* @Autor Camila Londero
+* @date 26/06/2020
+*/
+
 
 #include "Coin_Strategy.h"
 
