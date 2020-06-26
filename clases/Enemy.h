@@ -20,8 +20,8 @@ private:
 
     Animator *anim;
     Vector2 Enemy_pos;
+    Vector2 size;
     estado Estado;
-
     int mirar;
 
 public:
@@ -29,16 +29,9 @@ public:
 
     Enemy(std::string text, const Vector2 &EnemyPos);
 
-    //Enemy *clone();
-
-
     void draw();
     void moveEnemy();
-   // void removeEnemy (const Vector2 &EnemyPos);
-   // void move_x(float d);
-   // void move_y(float d);
 
-
-
+    Rectangle getRectangle();
 };
 #endif //RAYLIBTEMPLATE_ENEMY_H

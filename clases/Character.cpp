@@ -3,6 +3,7 @@
 //
 #include <string>
 #include "Character.h"
+#include "Singleton.h"
 #include <iostream>
 
 Character::Character(std::string text, const Vector2 &characterPos) : character_pos(characterPos) {
@@ -19,9 +20,6 @@ Character::Character(std::string text, const Vector2 &characterPos) : character_
 void Character::draw() {
     switch (estado) {
         case CORRIENDO:
-            anim->draw(character_pos, mirar, 0);
-            break;
-        case DISPARANDO:
             anim->draw(character_pos, mirar, 0);
             break;
         case QUIETO:
@@ -78,5 +76,9 @@ const Vector2 &Character::getCharacterVel() const {
 
 void Character::setCharacterVel(const Vector2 &characterVel) {
     character_vel = characterVel;
+}
+
+void Character::setCharacterPos(const Vector2 &characterPos) {
+    character_pos = characterPos;
 }
 

@@ -1,8 +1,0 @@
-//
-// Created by micav on 16/05/2020.
-//
-
-#ifndef RAYLIBTEMPLATE_GAMESTRUCT_H
-#define RAYLIBTEMPLATE_GAMESTRUCT_H
-
-#endif //RAYLIBTEMPLATE_GAMESTRUCT_H

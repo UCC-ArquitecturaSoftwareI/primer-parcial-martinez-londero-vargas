@@ -3,7 +3,7 @@
 
 #include <string>
 
-Map::Map(std::string file) {
+Map::Map(std::string file, std::list<Enemy *> &enemigos,std::list<Coin *> &monedas) {
     tson::Tileson parser;
     map = parser.parse(fs::path("resources/Level/" + file));
     //dibujo =LoadTexture(img.c_str());
@@ -13,7 +13,6 @@ Map::Map(std::string file) {
             map_text = LoadTexture(("resources/Level/" + tileset.getImage().string()).c_str());
             map_tileset = &tileset;
         }
-
 
         auto objs = map.getLayer("Player");
         tson::Object *player = objs->firstObj("player");
@@ -26,6 +25,17 @@ Map::Map(std::string file) {
             std::cout << " Pos" << obj.getPosition().x << std::endl;
 
         }
+//
+        auto llegadas = map.getLayer("win");
+        for (auto &obj : llegadas->getObjects()) {
+            llegada.push_back({static_cast<float>(obj.getPosition().x),
+                                 static_cast<float>(obj.getPosition().y),
+                                 static_cast<float>(obj.getSize().x),
+                                 static_cast<float>(obj.getSize().y)});
+            }
+
+
+///
 
         // Leo pisos
         auto piso = map.getLayer("Piso");
@@ -37,12 +47,34 @@ Map::Map(std::string file) {
                              static_cast<float>(obj.getSize().x),
                              static_cast<float>(obj.getSize().y)});
         }
+
+        //enemigo = new Enemy("resources/Enemy.png", Vector2{static_cast<float>(screenWidth / 2.0), static_cast<float>(screenHeight - 180)});
+        // Leo enemigos
+        auto enemigos_mapa = map.getLayer("Enemigos");
+        for (auto &obj : enemigos_mapa->getObjects()) {
+            switch (obj.get<int>("tipo")) {
+                case 0:
+                    enemigos.push_back(new Enemy("resources/Enemy.png",
+                                                 {static_cast<float>(obj.getPosition().x),
+                                                  static_cast<float>(obj.getPosition().y)}));
+                    break;
+                case 1:
+                    enemigos.push_back(new Enemy("resources/SuperEnemy.png",
+                                                 {static_cast<float>(obj.getPosition().x),
+                                                  static_cast<float>(obj.getPosition().y)}));
+            }
+        }
+       // coins = new Coin("coin.png",Vector2{screenWidth / 2, screenHeight - 10});
+        auto monedas_mapa = map.getLayer("Monedas");
+        for (auto &obj : monedas_mapa->getObjects()) {
+                    monedas.push_back(new Coin("resources/coin.png",
+                                                 {static_cast<float>(obj.getPosition().x),
+                                                  static_cast<float>(obj.getPosition().y)}));
+            }
+        }
     }
-}
 
 
-//  x=0;
-// y=0;
 
 
 int Map::getX() {
@@ -74,7 +106,7 @@ void Map::dibujar() {
     int space = map_tileset->getSpacing();
 
     auto &c = map.getBackgroundColor();
-    ClearBackground({c.r, c.g, c.b, c.a});
+    //ClearBackground({c.r, c.g, c.b, c.a});
 
     for (auto nombre: {"Fondo", "Frente1", "Frente2", "Frente3"}) {
         auto *layer = map.getLayer(nombre);
@@ -101,37 +133,3 @@ void Map::dibujar() {
 
 
 }
-
-/*
-
-#include "Map.h"
-#include <string>
-
-Map::Map (std::string img)
-{
-    dibujo =LoadTexture(img.c_str());
-    x=0;
-    y=0;
-}
-
-int Map::getX() {
-    return x;
-}
-
-void Map::setX(int x) {
-    Map::x += x;
-}
-
-int Map::getY() {
-    return y;
-}
-
-void Map::setY(int y) {
-    Map::y += y;
-}
-
-void Map::dibujar() {
-    DrawTexture(dibujo,x,y,WHITE);
-}
- }
-*/

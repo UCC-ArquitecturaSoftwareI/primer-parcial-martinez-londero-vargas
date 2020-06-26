@@ -7,7 +7,11 @@
 
 #include "raylib.h"
 #include <string>
+#include <list>
 #include "../libreria/tileson.hpp"
+#include "Enemy.h"
+#include "Coin.h"
+#include "Win.h"
 #include <vector>
 class Map
 {
@@ -19,8 +23,9 @@ class Map
 
 public:
     std::vector<Rectangle> pisos;
+    std::vector<Rectangle> llegada;
     Vector2 player_init_pos;
-    Map(std:: string file);
+    Map(std:: string file, std::list<Enemy*> &enemigos,std::list<Coin*> &monedas);
     void setX(int x);
     int getX();
     void setY(int y);
@@ -30,33 +35,6 @@ public:
 
 
 
-};
-#endif //PRIMER_PARCIAL_MARTINEZ_LONDERO_VARGAS_MAP_H
-/*
-#ifndef PRIMER_PARCIAL_MARTINEZ_LONDERO_VARGAS_MAP_H
-#define PRIMER_PARCIAL_MARTINEZ_LONDERO_VARGAS_MAP_H
-
-#include "raylib.h"
-#include <string>
-class Map
-{
-private:
-
-    Texture2D dibujo;
-    int x=0;
-    int y=0;
-
-public:
-
-    Map (std::string img);
-    void setX(int x);
-    int getX();
-    void setY(int y);
-    int getY();
-    void dibujar ();
-
-
 
 };
 #endif //PRIMER_PARCIAL_MARTINEZ_LONDERO_VARGAS_MAP_H
-*/

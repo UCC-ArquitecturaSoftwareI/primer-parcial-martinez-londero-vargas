@@ -1,8 +1,0 @@
-//
-// Created by micav on 16/05/2020.
-//
-
-#ifndef RAYLIBTEMPLATE_MANANGER_H
-#define RAYLIBTEMPLATE_MANANGER_H
-
-#endif //RAYLIBTEMPLATE_MANANGER_H
