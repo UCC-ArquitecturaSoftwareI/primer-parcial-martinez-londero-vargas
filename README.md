@@ -5,6 +5,7 @@
 Descripción del proyecto:
 Se trata de un juego de plataformas, donde el personaje principal debe escapar de la ciudad mientras un
 sinfín de enemigos intentan evitar que esto suceda.
+Video promicional: https://drive.google.com/drive/my-drive
 Se puede ver desde: [Github Pages][gh-pages]
 
 
