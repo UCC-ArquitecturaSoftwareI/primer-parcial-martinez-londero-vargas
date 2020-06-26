@@ -20,6 +20,7 @@
 
 class Singleton {
 private:
+
     Singleton() {
 
         player = new Character("resources/Character.png",Vector2{static_cast<float>(screenWidth / 2.0), static_cast<float>(screenHeight - 80)});
@@ -48,7 +49,7 @@ public:
     Texture2D background;
     std::list<Enemy *> enemigos;
     std::list<GoodCoin*> monedas;
- std::list<BadCoin *> badcoins;
+    std::list<BadCoin *> badcoins;
     Win winner;
 
 

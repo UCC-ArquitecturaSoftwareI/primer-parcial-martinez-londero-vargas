@@ -1,6 +1,4 @@
-//
-// Created by mica on 25/06/2020.
-//
+
 
 #include "Score_Strategy.h"
 #ifndef RAYLIBTEMPLATE_STRATEGY_CONTEXT_H

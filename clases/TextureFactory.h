@@ -34,10 +34,10 @@ public:
         auto textura = pool.find(file);
 
         if (textura != pool.end()) {
-            return textura->second;
+            return pool[file];
         }
 
-        pool.emplace(file, LoadTexture(file.c_str()));
+        pool[file] = LoadTexture(file.c_str());
         return getTexture(file);}
 
 };

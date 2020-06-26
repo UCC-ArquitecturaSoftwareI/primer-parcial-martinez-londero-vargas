@@ -12,7 +12,7 @@
 
 class Animator {
 private:
-    Texture2D textura{};
+    Texture2D textura;
     int columna, fila;
     int columna_act;
     float alto, ancho;

@@ -11,8 +11,8 @@ Animator::Animator(const std::string tex_file, float alto, float ancho, int colu
           ancho(ancho),
           columna(columna),
           fila(fila) {
-    textura = //af->getTexture(tex_file);
-    LoadTexture(tex_file.c_str());
+    textura = af->getTexture(tex_file);
+    //LoadTexture(tex_file.c_str());
 
     tiempo = 4;
     columna_act = 0;
