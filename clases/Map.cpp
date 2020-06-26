@@ -3,7 +3,7 @@
 
 #include <string>
 
-Map::Map(std::string file, std::list<Enemy *> &enemigos,std::list<Coin *> &monedas,std::list<BadCoin*> badcoins) {
+Map::Map(std::string file, std::list<Enemy *> &enemigos,std::list<GoodCoin *> &monedas,std::list<BadCoin*> badcoins) {
     tson::Tileson parser;
     map = parser.parse(fs::path("resources/Level/" + file));
     //dibujo =LoadTexture(img.c_str());
@@ -48,7 +48,6 @@ Map::Map(std::string file, std::list<Enemy *> &enemigos,std::list<Coin *> &moned
                              static_cast<float>(obj.getSize().y)});
         }
 
-        //enemigo = new Enemy("resources/Enemy.png", Vector2{static_cast<float>(screenWidth / 2.0), static_cast<float>(screenHeight - 180)});
         // Leo enemigos
         auto enemigos_mapa = map.getLayer("Enemigos");
         for (auto &obj : enemigos_mapa->getObjects()) {
@@ -61,7 +60,7 @@ Map::Map(std::string file, std::list<Enemy *> &enemigos,std::list<Coin *> &moned
         auto monedas_mapa = map.getLayer("Monedas");
         for (auto &obj : monedas_mapa->getObjects()) {
 
-                    monedas.push_back(new Coin("resources/coin.png",
+                    monedas.push_back(new GoodCoin("resources/coin.png",
                                                {static_cast<float>(obj.getPosition().x),
                                                 static_cast<float>(obj.getPosition().y)}));
 
@@ -75,9 +74,6 @@ Map::Map(std::string file, std::list<Enemy *> &enemigos,std::list<Coin *> &moned
         }
 
         }
-
-
-
 
 
 

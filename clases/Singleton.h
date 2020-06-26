@@ -14,6 +14,7 @@
 #include "Win.h"
 #include "BadCoin.h"
 #include "TextureFactory.h"
+#include "GoodCoin.h"
 #ifndef RAYLIBTEMPLATE_SINGLETON_H
 #define RAYLIBTEMPLATE_SINGLETON_H
 
@@ -46,7 +47,7 @@ public:
     Map *map;
     Texture2D background;
     std::list<Enemy *> enemigos;
-    std::list<Coin *> monedas;
+    std::list<GoodCoin*> monedas;
  std::list<BadCoin *> badcoins;
     Win winner;
 

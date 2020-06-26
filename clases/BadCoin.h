@@ -1,25 +1,41 @@
-
+/**
+* @file BadCoin.h
+* @Author Camila Londero
+* @Author Micaela Vargas
+* @date 26/06/2020
+* @brief Implementacion de la moneda mala
+*/
 #ifndef RAYLIBTEMPLATE_BADCOIN_H
 #define RAYLIBTEMPLATE_BADCOIN_H
+
 #include "Decorator_Coin.h"
 #include "Animator.h"
 
-class BadCoin : public Decorator_Coin{
+#include "Animator.h"
+
+class BadCoin : public Coin {
+
 public:
-    BadCoin (Coin *coin) : Decorator_Coin(*coin)
-    {
+/**
+* @brief Constructor de la clase
+*/
+    BadCoin(std::string text, const Vector2 &coinPos);
 
-    }
+/**
+* @brief Genera el rectangulo de colision
+*/
+    Rectangle getRectangle();
 
-   BadCoin(std::string text, const Vector2 &coinPos) : Decorator_Coin(){
+/**
+* @brief Llama al draw correspondiente del animator
+*/
+    void draw() override;
 
-    }
-
-    void draw()
-    {
-        anim->draw_BadCoin(coin_pos, mirar, 0);
-
-    }
+/**
+* @brief Destructor de la clase
+*/
+    virtual ~BadCoin();
 
 };
+
 #endif //RAYLIBTEMPLATE_BADCOIN_H

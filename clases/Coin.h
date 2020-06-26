@@ -1,30 +1,36 @@
-//
-// Created by micav on 26/05/2020.
-//
-
+/**
+* @file Coin.h
+* @Author Camila Londero
+* @Author Micaela Vargas
+* @date 26/06/2020
+* @brief Implementacion de la clase abstracta moneda
+*/
 #ifndef RAYLIBTEMPLATE_COIN_H
 #define RAYLIBTEMPLATE_COIN_H
 
 #include <raylib.h>
 #include <string>
 #include "Animator.h"
-class Coin{
+
+class Coin {
 
 protected:
+
     Texture2D coin;
     Vector2 coin_pos;
     int width;
     int height;
-    Animator *anim;
     int mirar;
+    Animator *anim;
     Vector2 size;
-public:
-    Coin(std::string text, const Vector2 &coinPos);
-    Coin();
 
-    Rectangle getRectangle();
-    virtual void draw();
-    virtual ~Coin();
+public:
+/**
+* @brief Funcion virtual pura q heredaran las subclases
+*/
+    virtual void draw() = 0;
+
 
 };
+
 #endif //RAYLIBTEMPLATE_COIN_H

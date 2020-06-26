@@ -3,6 +3,7 @@
 #include "Singleton.h"
 #include "GameOver.h"
 #include "Coin_Strategy.h"
+#include "BadCoin_Strategy.h"
 #include "Strategy_Context.h"
 
 Camera2D camera = {0};
@@ -49,15 +50,15 @@ void Game::loop() {
         }
     }
 
-    Coin *aBorrar = nullptr;
-    for (Coin *coin: Global.monedas) {
-        if (CheckCollisionRecs(Global.player->getRectangle(), coin->getRectangle())) {
-            Coin *temp = coin;
+    GoodCoin *aBorrar = nullptr;
+    for (GoodCoin *goodCoin: Global.monedas) {
+        if (CheckCollisionRecs(Global.player->getRectangle(), goodCoin->getRectangle())) {
+            GoodCoin *temp = goodCoin;
 
             context.SetStrategy(new Coin_Strategy);
             puntaje = context.executeStrategy(puntaje);
 
-            aBorrar = coin;
+            aBorrar = goodCoin;
 
 
         }
@@ -66,6 +67,25 @@ void Game::loop() {
         Global.monedas.remove(aBorrar);
         delete aBorrar;
     }
+
+    BadCoin *Borrar = nullptr;
+    for (BadCoin *badCoin: Global.badcoins) {
+        if (CheckCollisionRecs(Global.player->getRectangle(), badCoin->getRectangle())) {
+            BadCoin *temp = badCoin;
+
+            context.SetStrategy(new BadCoin_Strategy);
+            puntaje = context.executeStrategy(puntaje);
+
+            Borrar = badCoin;
+
+
+        }
+    }
+    if (Borrar != nullptr) {
+        Global.monedas.remove(Borrar);
+        delete Borrar;
+    }
+
     camera.target = {Global.player->getCharacterPos().x, Global.player->getCharacterPos().y};
     camera.offset = (Vector2) {0, static_cast<float>(Global.screenHeight / 2)};
     camera.rotation = 0.0f;
