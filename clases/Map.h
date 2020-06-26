@@ -1,6 +1,10 @@
-//
-// Created by micav on 25/04/2020.
-//
+/**
+* @file Map.h
+* @Autor Micaela Vargas
+* @Autor Camila Londero
+* @date 26/06/2020
+* @brief implementacion del mapa
+*/
 
 #ifndef PRIMER_PARCIAL_MARTINEZ_LONDERO_VARGAS_MAP_H
 #define PRIMER_PARCIAL_MARTINEZ_LONDERO_VARGAS_MAP_H
@@ -25,11 +29,23 @@ public:
     std::vector<Rectangle> pisos;
     std::vector<Rectangle> llegada;
     Vector2 player_init_pos;
+
+/**
+* @brief constructor de la clase
+*/
     Map(std:: string file, std::list<Enemy*> &enemigos,std::list<Coin*> &monedas);
-    void setX(int x);
+/**
+* @return la posicion x
+*/
     int getX();
-    void setY(int y);
+/**
+* @return la posicion y
+*/
+
     int getY();
+/**
+* @brief dibuja el mapa
+*/
     void dibujar ();
 
 

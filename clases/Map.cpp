@@ -1,3 +1,10 @@
+/**
+* @file Map.cpp
+* @Autor Micaela Vargas
+* @Autor Camila Londero
+* @date 26/06/2020
+*/
+
 #include "Map.h"
 #include <iostream>
 
@@ -81,17 +88,11 @@ int Map::getX() {
     return x;
 }
 
-void Map::setX(int x) {
-    Map::x += x;
-}
 
 int Map::getY() {
     return y;
 }
 
-void Map::setY(int y) {
-    Map::y += y;
-}
 
 void Map::dibujar() {
     Rectangle tile_rec;
