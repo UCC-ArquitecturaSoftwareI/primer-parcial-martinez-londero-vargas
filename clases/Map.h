@@ -27,7 +27,7 @@ public:
     std::vector<Rectangle> pisos;
     std::vector<Rectangle> llegada;
     Vector2 player_init_pos;
-    Map(std:: string file, std::list<Enemy*> &enemigos,std::list<GoodCoin*> &monedas,std::list<BadCoin*> badcoins);
+    Map(std:: string file, std::list<Enemy*> &enemigos,std::list<Coin*> &monedas);
     int getX();
     int getY();
     void dibujar ();

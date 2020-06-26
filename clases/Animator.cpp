@@ -3,7 +3,7 @@
 #include "Animator.h"
 #include "TextureFactory.h"
 
-TextureFactory *af;
+TextureFactory af;
 
 Animator::Animator(const std::string tex_file, float alto, float ancho, int columna, int fila)
         : textura(textura),
@@ -11,7 +11,7 @@ Animator::Animator(const std::string tex_file, float alto, float ancho, int colu
           ancho(ancho),
           columna(columna),
           fila(fila) {
-    textura = af->getTexture(tex_file);
+    textura = af.getTexture(tex_file);
     //LoadTexture(tex_file.c_str());
 
     tiempo = 4;

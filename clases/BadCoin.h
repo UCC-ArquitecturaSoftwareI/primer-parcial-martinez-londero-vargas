@@ -21,10 +21,6 @@ public:
 */
     BadCoin(std::string text, const Vector2 &coinPos);
 
-/**
-* @brief Genera el rectangulo de colision
-*/
-    Rectangle getRectangle();
 
 /**
 * @brief Llama al draw correspondiente del animator

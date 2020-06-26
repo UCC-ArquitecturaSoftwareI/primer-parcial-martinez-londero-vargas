@@ -50,12 +50,16 @@ void Game::loop() {
         }
     }
 
-    GoodCoin *aBorrar = nullptr;
-    for (GoodCoin *goodCoin: Global.monedas) {
+    Coin *aBorrar = nullptr;
+    for (Coin *goodCoin: Global.monedas) {
         if (CheckCollisionRecs(Global.player->getRectangle(), goodCoin->getRectangle())) {
-            GoodCoin *temp = goodCoin;
+            Coin *temp = goodCoin;
 
-            context.SetStrategy(new Coin_Strategy);
+            if (goodCoin->isBad()) {
+                context.SetStrategy(new BadCoin_Strategy);
+            } else {
+                context.SetStrategy(new Coin_Strategy);
+            }
             puntaje = context.executeStrategy(puntaje);
 
             aBorrar = goodCoin;
@@ -68,23 +72,6 @@ void Game::loop() {
         delete aBorrar;
     }
 
-    BadCoin *Borrar = nullptr;
-    for (BadCoin *badCoin: Global.badcoins) {
-        if (CheckCollisionRecs(Global.player->getRectangle(), badCoin->getRectangle())) {
-            BadCoin *temp = badCoin;
-
-            context.SetStrategy(new BadCoin_Strategy);
-            puntaje = context.executeStrategy(puntaje);
-
-            Borrar = badCoin;
-
-
-        }
-    }
-    if (Borrar != nullptr) {
-        Global.monedas.remove(Borrar);
-        delete Borrar;
-    }
 
     camera.target = {Global.player->getCharacterPos().x, Global.player->getCharacterPos().y};
     camera.offset = (Vector2) {0, static_cast<float>(Global.screenHeight / 2)};
@@ -112,9 +99,6 @@ void Game::loop() {
             coins->draw();
         }
 
-      for (BadCoin *badcoins: Global.badcoins) {
-            badcoins->draw();
-        }
     }
 
     EndMode2D();

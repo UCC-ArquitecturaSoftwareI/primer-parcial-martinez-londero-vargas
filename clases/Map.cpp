@@ -3,7 +3,7 @@
 
 #include <string>
 
-Map::Map(std::string file, std::list<Enemy *> &enemigos,std::list<GoodCoin *> &monedas,std::list<BadCoin*> badcoins) {
+Map::Map(std::string file, std::list<Enemy *> &enemigos,std::list<Coin *> &monedas) {
     tson::Tileson parser;
     map = parser.parse(fs::path("resources/Level/" + file));
     //dibujo =LoadTexture(img.c_str());
@@ -68,7 +68,7 @@ Map::Map(std::string file, std::list<Enemy *> &enemigos,std::list<GoodCoin *> &m
 
         auto Badcoin_mapa = map.getLayer("Badcoin");
         for (auto &obj : Badcoin_mapa->getObjects()) {
-            badcoins.push_back(new BadCoin("resources/coin.png",
+            monedas.push_back(new BadCoin("resources/coin.png",
                                            {static_cast<float>(obj.getPosition().x),
                                             static_cast<float>(obj.getPosition().y)}));}
         }

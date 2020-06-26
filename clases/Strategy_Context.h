@@ -7,8 +7,9 @@ class Strategy_Context {
 
 private:
     Score_Strategy *score_strategy;
-
 public:
+    Strategy_Context();
+
     void SetStrategy (Score_Strategy * score_s);
 
     int executeStrategy (int puntos);

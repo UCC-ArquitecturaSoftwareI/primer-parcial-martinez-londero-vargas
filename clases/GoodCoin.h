@@ -11,6 +11,8 @@
 #include <raylib.h>
 #include <string>
 #include "Animator.h"
+#include "Coin.h"
+
 class GoodCoin: public Coin{
 
 public:
@@ -18,10 +20,8 @@ public:
 * @brief Constructor de la clase
 */
     GoodCoin(std::string text, const Vector2 &coinPos);
-/**
-* @brief Genera el rectangulo de colision
-*/
-    Rectangle getRectangle();
+
+    GoodCoin();
 
 /**
 * @brief Llama al draw del animator

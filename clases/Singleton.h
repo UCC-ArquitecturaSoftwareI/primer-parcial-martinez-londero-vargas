@@ -24,7 +24,7 @@ private:
     Singleton() {
 
         player = new Character("resources/Character.png",Vector2{static_cast<float>(screenWidth / 2.0), static_cast<float>(screenHeight - 80)});
-        map = new Map("tiles.json", enemigos, monedas, badcoins);
+        map = new Map("tiles.json", enemigos, monedas);
         background = LoadTexture("resources/54147.png");
 
     }
@@ -48,8 +48,7 @@ public:
     Map *map;
     Texture2D background;
     std::list<Enemy *> enemigos;
-    std::list<GoodCoin*> monedas;
-    std::list<BadCoin *> badcoins;
+    std::list<Coin*> monedas;
     Win winner;
 
 
