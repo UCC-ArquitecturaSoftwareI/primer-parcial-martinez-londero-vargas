@@ -29,13 +29,13 @@ public:
 * @brief Dibuja la textura pasada por parametro y la recorre para crear el efecto de animacion
 * @param fila,character_pos,mirar
 */
-    void draw(Vector2 character_pos, int mirar, int fila);
+    void draw(Vector2 pos, int mirar, int fila);
 
 /**
 * @brief Dibuja la textura pasada por parametro de color rojo y la recorre para crear el efecto de animacion
 * @param fila,character_pos,mirar
 */
-    void draw_BadCoin(Vector2 character_pos, int mirar, int fila);
+    void draw_BadCoin(Vector2 pos, int mirar, int fila);
 
 };
 

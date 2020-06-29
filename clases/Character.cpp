@@ -18,8 +18,12 @@ Character::Character(std::string text, const Vector2 &characterPos) : character_
 void Character::draw() {
     switch (estado) {
         case CORRIENDO:
-            anim->draw(character_pos, mirar, 0);
-            break;
+            if (mirar == 0)
+            {anim->draw(character_pos, mirar, 0);}
+            if (mirar == 1)
+            {anim->draw(character_pos, mirar, 3);}
+
+    break;
         case QUIETO:
             anim->draw(character_pos, mirar, 0);
             break;
@@ -43,7 +47,7 @@ void Character::move_x(float d) {
 }
 
 void Character::move_y(float d) {
-    //character_pos.y += d;
+
 
     character_pos.y += character_vel.y; // mover el player
 

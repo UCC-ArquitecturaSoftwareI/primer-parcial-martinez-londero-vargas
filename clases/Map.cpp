@@ -51,7 +51,7 @@ Map::Map(std::string file, std::list<Enemy *> &enemigos,std::list<Coin *> &moned
         // Leo enemigos
         auto enemigos_mapa = map.getLayer("Enemigos");
         for (auto &obj : enemigos_mapa->getObjects()) {
-            enemigos.push_back(new Enemy("resources/Enemy.png",
+            enemigos.push_back(new Enemy("resources/Melee.png",
                                          {static_cast<float>(obj.getPosition().x),
                                           static_cast<float>(obj.getPosition().y)}));
 

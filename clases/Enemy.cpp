@@ -1,13 +1,10 @@
-//
-// Created by micav on 26/05/2020.
-//
 
 #include <string>
 #include "Enemy.h"
 
 Enemy::Enemy(std::string text, const Vector2 &EnemyPos) : Enemy_pos(EnemyPos) {
-    anim= new Animator(text, 53, 54, 8, 1);
-    size = {53,54};
+    anim= new Animator(text, 56, 57, 8, 1);
+    size = {56,56};
 }
 
 void Enemy::draw() {
